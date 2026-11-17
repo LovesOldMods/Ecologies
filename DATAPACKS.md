@@ -27,7 +27,7 @@ A file at the same path as one of ours replaces it, like `data/ecologies/ecologi
 
 ## Predation
 
-Predators hunt when they're hungry, then take a break after a kill.
+Predators will hunt when they're hungry and then take breaks after a kill, their gameplay loop is pretty simple for the most part.
 
 `ecologies/predation/`
 
@@ -65,7 +65,7 @@ Predators hunt when they're hungry, then take a break after a kill.
 
 ## Defense
 
-Animals that ram back when they or their young get attacked. They run instead if the herd's outnumbered.
+Animals that ram back when they or their young get attacked, They'll run from predators instead of attacking if the herd's outnumbered. (I'll probably make changes to this when I expand on it later since not all animals will just ram back their attackers but since this works for now oh well)
 
 `ecologies/defense/`
 
@@ -92,8 +92,7 @@ Animals that ram back when they or their young get attacked. They run instead if
 
 ## Grazing
 
-Animals eat food blocks and drop an item after. They drop more the more welfare checks they meet:
-open space, a few of their kind nearby, open sky, and being in their home biome.
+Animals will eat blocks registered as food and then drop an item some time after. They'll drop more when more welfare checks are met. Things such as: open space, a few of their kind nearby, open sky, and being in their home biome. (I'll expand on this later as well)
 
 `ecologies/grazing/`
 
@@ -150,7 +149,7 @@ Keeps animals of the same kind together.
 
 ## Natural breeding
 
-When one of the herd gets killed, the rest go into love mode at their next meal. Needs a [grazing](#grazing) file too.
+When one of the herd gets killed the rest of the herd will go into woohoo mode at their next meal. Needs a [grazing](#grazing) file too.
 
 `ecologies/natural_breeding/`
 
@@ -176,7 +175,7 @@ When one of the herd gets killed, the rest go into love mode at their next meal.
 
 ## Roost
 
-Bat colonies. Take too much guano too fast and the colony leaves.
+Bat colonies home block basically, if you take too much guano at once the colony leaves.
 
 `ecologies/roost/`
 
@@ -206,7 +205,7 @@ Bat colonies. Take too much guano too fast and the colony leaves.
 
 ## Substrate
 
-A block that breaks down what it grows on and spreads. It stops once there's nothing left to break down.
+This is really only for lichen but if you'd like to add other fungi that naturally break down blocks, kind of like an immersive weathering type of feature, you can define them as a substrate.
 
 `ecologies/substrate/`
 
@@ -238,7 +237,7 @@ A block that breaks down what it grows on and spreads. It stops once there's not
 
 ## Mushroom farm
 
-Something the mushroom farm can grow.
+Fungi and related foliage/items the mushroom farm can grow.
 
 `ecologies/mushroom_farm/`
 
