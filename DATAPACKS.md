@@ -1,20 +1,6 @@
-# Ecologies datapack guide
+# Datapacks
 
-Most of what Ecologies does can be changed with a datapack: who hunts what, which animals fight back, what
-herds eat, how bat colonies behave, what lichen breaks down, and what the mushroom farm grows.
-
-This isn't a general datapack tutorial. If you've never made one, start with the
-[Minecraft Wiki's datapack page](https://minecraft.wiki/w/Data_pack).
-
-## The basics
-
-Every file goes in its own folder under `ecologies`:
-
-```
-data/<namespace>/ecologies/<folder>/<name>.json
-```
-
-`<namespace>` is your pack's namespace and `<name>` can be anything. The folders are:
+Files go in `data/<namespace>/ecologies/<folder>/<name>.json`.
 
 | Folder | What it does |
 |---|---|
@@ -27,30 +13,23 @@ data/<namespace>/ecologies/<folder>/<name>.json
 | [`substrate`](#substrate) | Blocks that break down what they grow on. |
 | [`mushroom_farm`](#mushroom-farm) | What the mushroom farm can grow. |
 
-To change one of ours, put a file at the same path in your pack, like
-`data/ecologies/ecologies/predation/wolf.json`. Yours replaces ours completely, so copy the whole file
-and change what you want. Run `/reload` to see changes without restarting.
-
-Fields marked *optional* can be left out. Anything with a default uses that when it's left out.
+A file at the same path as one of ours replaces it, like `data/ecologies/ecologies/predation/wolf.json`.
 
 ### Types
 
 | Type | What it looks like |
 |---|---|
-| ID | A namespaced id, like `"minecraft:wolf"`. |
-| ID list | One id or tag, or a list of them. Tags start with `#`. `"minecraft:wolf"`, `"#minecraft:logs"` and `["minecraft:sheep", "#c:crops"]` all work. |
-| Block state | A block id with optional properties, written like in commands: `"minecraft:glow_lichen[down=true]"`. |
-| Ticks | Game ticks. 20 ticks is 1 second and 24000 is a full day. |
-| Chance | A number from `0` to `1`. `0.25` is 25%. |
-
----
+| ID | `"minecraft:wolf"` |
+| ID list | An id, a tag or a list of them: `["minecraft:sheep", "#c:crops"]` |
+| Block state | Written like in commands: `"minecraft:glow_lichen[down=true]"` |
+| Ticks | 20 is a second, 24000 is a day |
+| Chance | `0` to `1` |
 
 ## Predation
 
-Predators hunt when they're hungry, eat what they catch, then take a break. Prey only run from a
-predator while it's hungry.
+Predators hunt when they're hungry, then take a break after a kill.
 
-**Folder:** `data/<namespace>/ecologies/predation/`
+`ecologies/predation/`
 
 ### Fields
 
@@ -60,15 +39,15 @@ predator while it's hungry.
 | `prey` | ID list | | The mobs it hunts. |
 | `hunger_cooldown` | Ticks | `24000` | How long after a kill before it's hungry again. |
 | `prefers_babies` | Boolean | `true` | Goes for young prey nearby before adults. |
-| `eats_kill` | Boolean | `true` | Its kills don't drop food (it ate it). Things like leather still drop. |
-| `adds_hunting` | Boolean | `false` | Gives it a hunting goal if it doesn't hunt in vanilla. |
-| `prey_flee_range` | Number | `10` | How close it can get before prey run. `0` means they don't run. |
-| `chase_speed` | Number | `0` | Above `0`, it chases and bites on the run at this speed instead of using its own attack. Polar bears use this since their own attack stops them dead. |
+| `eats_kill` | Boolean | `true` | Kills don't drop food. |
+| `adds_hunting` | Boolean | `false` | Adds a hunting goal for mobs that don't hunt in vanilla. |
+| `prey_flee_range` | Number | `10` | How close it gets before prey run. `0` turns it off. |
+| `chase_speed` | Number | `0` | Chases and bites on the run at this speed instead of using its own attack. `0` turns it off. |
 | `sprint` | Number | `1.0` | Speed multiplier while chasing. |
-| `stalks` | Boolean | `false` | Sneaks up on prey. Prey don't notice it until it's within 3 blocks or stops crouching. |
-| `give_up_after` | Ticks | `200` | How long it'll chase out in the open before it tires and gives up. Sneaking doesn't count. Packs last three times as long. |
-| `pack_size` | Integer | `0` | Above `0`, this many of its kind hunting together become a pack. They flank and wear the prey out instead of sprinting it down. |
-| `rush_range` | Number | `0` | Above `0`, a stalker stops sneaking within this many blocks and dashes in. |
+| `stalks` | Boolean | `false` | Sneaks up on prey. |
+| `give_up_after` | Ticks | `200` | How long it chases before giving up. Packs last 3x as long. |
+| `pack_size` | Integer | `0` | How many have to hunt together to count as a pack. `0` turns it off. |
+| `rush_range` | Number | `0` | Distance where a stalker stops sneaking and rushes in. `0` turns it off. |
 
 ### Example
 
@@ -84,18 +63,11 @@ predator while it's hungry.
 }
 ```
 
-Foxes get hungry every half day. They sneak up on chickens, rabbits and fish, then dash in once they're
-5 blocks away.
-
----
-
 ## Defense
 
-Animals that stand their ground. They ram whatever attacks them, or goes after their young, once, then back
-off. If the herd's outnumbered they run instead. A predator that gets rammed while it has young of its
-own nearby gives up and goes back to them.
+Animals that ram back when they or their young get attacked. They run instead if the herd's outnumbered.
 
-**Folder:** `data/<namespace>/ecologies/defense/`
+`ecologies/defense/`
 
 ### Fields
 
@@ -118,19 +90,12 @@ own nearby gives up and goes back to them.
 }
 ```
 
-Muskox ram for 4 damage with a big shove, and look out for calves within 12 blocks.
-
----
-
 ## Grazing
 
-The animal walks over to food blocks, eats them, and drops an item a while after, like chickens laying
-eggs. It drops more when it's living the way it would in the wild.
+Animals eat food blocks and drop an item after. They drop more the more welfare checks they meet:
+open space, a few of their kind nearby, open sky, and being in their home biome.
 
-There are 4 welfare checks: open space around it, a few of its kind nearby (but not a crowd), open sky,
-and being in its home biome. The more it meets, the more it drops.
-
-**Folder:** `data/<namespace>/ecologies/grazing/`
+`ecologies/grazing/`
 
 ### Fields
 
@@ -157,16 +122,11 @@ and being in its home biome. The more it meets, the more it drops.
 }
 ```
 
-Muskox graze glow lichen and drop string, from 1 when they're cooped up to 8 when they're happy and out on
-the tundra.
-
----
-
 ## Herding
 
-A light pull toward others of the same kind so they stick together instead of wandering off.
+Keeps animals of the same kind together.
 
-**Folder:** `data/<namespace>/ecologies/herding/`
+`ecologies/herding/`
 
 ### Fields
 
@@ -188,15 +148,11 @@ A light pull toward others of the same kind so they stick together instead of wa
 }
 ```
 
----
-
 ## Natural breeding
 
-When one of the herd gets killed and there aren't any young around, the others go into love mode at
-their next meal, so herds bounce back from small losses on their own. The animal needs a
-[grazing](#grazing) file too, since this is set off by eating.
+When one of the herd gets killed, the rest go into love mode at their next meal. Needs a [grazing](#grazing) file too.
 
-**Folder:** `data/<namespace>/ecologies/natural_breeding/`
+`ecologies/natural_breeding/`
 
 ### Fields
 
@@ -218,14 +174,11 @@ their next meal, so herds bounce back from small losses on their own. The animal
 }
 ```
 
----
-
 ## Roost
 
-How a colony mob lives around its roost. Bats sleep at the roost during the day, feed over crops at night
-and drop guano under the roost when they get back. Take too much guano too fast and the colony leaves.
+Bat colonies. Take too much guano too fast and the colony leaves.
 
-**Folder:** `data/<namespace>/ecologies/roost/`
+`ecologies/roost/`
 
 ### Fields
 
@@ -251,17 +204,11 @@ and drop guano under the roost when they get back. Take too much guano too fast 
 }
 ```
 
-To have bats feed over more things, add to the `#ecologies:bat_forage_crops` block tag instead of
-changing this file.
-
----
-
 ## Substrate
 
-A block that slowly breaks down whatever it's growing on, and spreads. Only blocks listed under `from`
-count, and once there's none left around it, it stops.
+A block that breaks down what it grows on and spreads. It stops once there's nothing left to break down.
 
-**Folder:** `data/<namespace>/ecologies/substrate/`
+`ecologies/substrate/`
 
 ### Fields
 
@@ -289,16 +236,11 @@ count, and once there's none left around it, it stops.
 }
 ```
 
-Sprouted glow lichen turns stone into cobblestone, then cobblestone and andesite into gravel, and
-spreads normal glow lichen around it.
-
----
-
 ## Mushroom farm
 
-One fungus the mushroom farm can grow. Using the `input` item on an empty farm plants it.
+Something the mushroom farm can grow.
 
-**Folder:** `data/<namespace>/ecologies/mushroom_farm/`
+`ecologies/mushroom_farm/`
 
 ### Fields
 
@@ -313,8 +255,7 @@ One fungus the mushroom farm can grow. Using the `input` item on an empty farm p
 | `accelerators` | List | rotten flesh, logs, sticks | Items you can feed it to speed it up. Each has `items` (ID list) and `ticks` (how much growth it skips). |
 | `extras` | List | `[]` | Bonus drops, each rolled on its own at every harvest. Each has `item` (ID), `chance` (Chance, default `1`), and `min` and `max` (default `1`). |
 
-The default accelerators are rotten flesh (2400 ticks), anything in `#minecraft:logs` (1200) and sticks
-(300).
+Default accelerators are rotten flesh (2400), `#minecraft:logs` (1200) and sticks (300).
 
 ### Example
 
@@ -331,14 +272,7 @@ The default accelerators are rotten flesh (2400 ticks), anything in `#minecraft:
 }
 ```
 
-Crimson fungus gives 1 or 2 back each harvest, usually some nether wart blocks, and a shroomlight a quarter
-of the time.
-
----
-
 ## Tags
-
-These block and biome tags can be changed like any other tag.
 
 | Tag | What it's for |
 |---|---|
