@@ -61,7 +61,7 @@ public final class Crops {
                 Blocks.POTATOES, EcoBlocks.BOLTING_POTATOES.get(), Blocks.BEETROOTS, EcoBlocks.BOLTING_BEETROOTS.get());
     }
 
-    // Runs during block state setup, registries might not be ready.
+    // runs during block state setup so registries might not be ready yet
     public static boolean canBolt(BlockState state) {
         Block block = state.getBlock();
         return (block == Blocks.WHEAT || block == Blocks.CARROTS || block == Blocks.POTATOES || block == Blocks.BEETROOTS)
@@ -86,7 +86,7 @@ public final class Crops {
     private static void setFrozen(Level level, BlockPos pos, boolean frozen) {
         LevelChunk chunk = level.getChunkAt(pos);
         Set<Long> set = new HashSet<>(chunk.getData(FROZEN));
-        // Drop frozen spots with no crop.
+        // drop frozen spots that don't have a crop anymore
         set.removeIf(p -> !(level.getBlockState(BlockPos.of(p)).getBlock() instanceof CropBlock));
         if (frozen) set.add(pos.asLong());
         else set.remove(pos.asLong());

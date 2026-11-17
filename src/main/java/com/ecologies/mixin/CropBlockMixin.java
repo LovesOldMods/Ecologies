@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-// Keeps ripe crops ticking so they can bolt.
+// basically keeps ripe crops ticking so they can bolt
 @Mixin(CropBlock.class)
 public abstract class CropBlockMixin {
     @Inject(method = "isRandomlyTicking", at = @At("HEAD"), cancellable = true)

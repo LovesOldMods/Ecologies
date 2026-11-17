@@ -13,7 +13,7 @@ import java.util.Comparator;
 import java.util.EnumSet;
 import java.util.List;
 
-// Based on wild wolves. Not faster than the prey, they wear it out.
+// based on wild wolves, they're not faster than their prey so they wear it out instead
 final class PackHuntGoal extends Goal {
     private static final double RANGE = 24.0, FLANK_RADIUS = 4.0;
     private static final int RELAY_TICKS = 80;
@@ -86,11 +86,11 @@ final class PackHuntGoal extends Goal {
         if (me < 0) return;
         int lead = (int) (mob.level().getGameTime() / RELAY_TICKS % n);
         if (me == lead) {
-            // Chaser stays on its tail.
+            // chaser stays right on its tail
             mob.getNavigation().moveTo(prey, 1.1);
             return;
         }
-        // Flankers go wide and ahead.
+        // flankers go wide and out ahead
         Vec3 run = prey.getDeltaMovement().multiply(1, 0, 1);
         double heading = run.lengthSqr() > 1.0E-4 ? Math.atan2(run.z, run.x)
                 : Math.atan2(prey.getZ() - pack.get(lead).getZ(), prey.getX() - pack.get(lead).getX());

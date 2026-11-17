@@ -52,7 +52,7 @@ public final class CaveMouth {
                     }
                     p = next;
                     if (level.getHeight(Heightmap.Types.WORLD_SURFACE_WG, p.getX(), p.getZ()) <= p.getY()) continue; // still open sky
-                    // Mouths can narrow at the lip, check further in.
+                    // mouths can narrow at the lip so check a bit further in
                     BlockPos q = p;
                     for (int d = 0; d < 4; d++) {
                         if (bigEnough(level, q, dir)) {
@@ -73,7 +73,7 @@ public final class CaveMouth {
 
     private static boolean bigEnough(WorldGenLevel level, BlockPos mouth, Direction inward) {
         BlockPos ceiling = ceilingAbove(level, mouth, 8);
-        // Rock or dirt overhead is fine. Dripstone only goes on rock.
+        // rock or dirt overhead is fine, dripstone only goes on the rock though
         if (ceiling == null || ceiling.getY() - mouth.getY() < MIN_HEIGHT || !level.getBlockState(ceiling).isCollisionShapeFullBlock(level, ceiling)) return false;
         // 2 wide minimum, solid floor.
         Direction side = inward.getClockWise();
@@ -148,7 +148,7 @@ public final class CaveMouth {
     }
 
     private static void point(WorldGenLevel level, BlockPos start, int length, Direction tip) {
-        // Leave a gap, don't touch the other side.
+        // leave a gap so it doesn't touch the other side
         for (int i = 0; i < length; i++) {
             if (!level.getBlockState(start.relative(tip, i)).isAir() || !level.getBlockState(start.relative(tip, i + 1)).isAir()) {
                 length = i;

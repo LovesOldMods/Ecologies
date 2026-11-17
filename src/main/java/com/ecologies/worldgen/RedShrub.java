@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.fml.ModList;
 
-// 1.21.1: use the other red shrub if something already adds one.
+// on 1.21.1 use the other red shrub if something already adds one
 public final class RedShrub {
     private RedShrub() {}
 
@@ -26,7 +26,7 @@ public final class RedShrub {
     private static Block backport() {
         if (!checked && ModList.get() != null) {
             checked = true;
-            // Not in vanilla 1.21.1, if it's here something added it.
+            // vanilla 1.21.1 doesn't have one so if it's here something else added it
             var id = Identifier.fromNamespaceAndPath("minecraft", "red_shrub");
             if (BuiltInRegistries.BLOCK.containsKey(id)) {
                 backport = BuiltInRegistries.BLOCK.get(id);

@@ -12,7 +12,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 *///?}
 
-// 26.x: feature and feature type. 1.21.1: configured feature and feature.
+// 26.x calls these feature and feature type, 1.21.1 calls them configured feature and feature, oh well
 //? if >=26.1 {
 public abstract class EcoFeature implements Feature {
     private final MapCodec<EcoFeature> codec = MapCodec.unit(this);

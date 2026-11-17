@@ -51,7 +51,7 @@ public final class TundraEvents {
     }
 
     //? if >=26.1 {
-    // 26.x strips with data block transformers, ours are done here.
+    // 26.x strips with data block transformers, ours get done here
     private static void onToolUse(PlayerInteractEvent.RightClickBlock event) {
         var stack = event.getItemStack();
         if (!stack.is(ItemTags.AXES)) return;

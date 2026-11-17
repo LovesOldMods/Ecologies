@@ -27,7 +27,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 *///?}
 
 public class MushroomFarmBlock extends Block implements EntityBlock {
-    // Composter style bin, 2px floor and walls.
+    // composter style bin, 2px floor and walls
     private static final VoxelShape INSIDE = Block.box(2, 2, 2, 14, 16, 14);
     private static final VoxelShape SHAPE =
             Shapes.join(Shapes.block(), INSIDE,
@@ -70,7 +70,7 @@ public class MushroomFarmBlock extends Block implements EntityBlock {
         return (BlockEntityTicker<T>) (BlockEntityTicker<MushroomFarmBlockEntity>) MushroomFarmBlockEntity::serverTick;
     }
 
-    // Server decides, client guesses.
+    // server decides, client just guesses
     private boolean handleItem(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player) {
         int stage = state.getValue(STAGE);
         if (level.isClientSide()) return stage != FULL;  // the client doesn't have the datapack

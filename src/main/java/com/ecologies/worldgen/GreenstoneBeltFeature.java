@@ -43,7 +43,7 @@ public class GreenstoneBeltFeature extends EcoFeature {
                         set(level, p, rock(random, 0.03F, 0.0005F)); // ore halved, raw iron blocks an eighth of what they were
                         placed = true;
                     }
-                    // Neighbour chunk might have already put plants here.
+                    // the chunk next door might've already put plants here
                     TundraMoss.clearPlantOnRock(level, new BlockPos(bx, top + 1, bz));
                 }
             }

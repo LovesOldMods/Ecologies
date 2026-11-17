@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Property;
 
-// Command style strings. Vanilla's block state JSON changes between versions.
+// command style strings, vanilla's block state JSON keeps changing between versions
 public final class BlockStateString {
     public static final Codec<BlockState> CODEC = Codec.STRING.comapFlatMap(BlockStateString::parse, BlockStateString::write);
 

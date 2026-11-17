@@ -20,7 +20,7 @@ public class GuanoBlock extends Block {
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (random.nextInt(AGING_CHANCE) != 0) return;
-        // Stays fresh while a colony's above it.
+        // stays fresh while a colony's still living above it
         boolean colonyAbove = !level.getEntitiesOfClass(ColonyBat.class,
                 new AABB(pos).inflate(6, 24, 6), Entity::isAlive).isEmpty();
         if (!colonyAbove) {

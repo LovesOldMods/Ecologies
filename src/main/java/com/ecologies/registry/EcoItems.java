@@ -79,7 +79,7 @@ public final class EcoItems {
             .icon(() -> GUANO_BLOCK.get().getDefaultInstance())
             .displayItems((params, out) -> {
                 for (DeferredHolder<Item, ? extends Item> item : ITEMS.getEntries()) {
-                    // Hide ours if something else adds the red shrub.
+                    // hide ours if something else already adds the red shrub
                     if (item.getId().getPath().equals("red_shrub") && RedShrub.backported()) continue;
                     out.accept(item.get());
                 }

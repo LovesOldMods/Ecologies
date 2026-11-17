@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Blocks;
 public class MossPatchFeature extends EcoFeature {
     @Override
     public boolean generate(WorldGenLevel level, RandomSource random, BlockPos origin) {
-        // Main layout for PATCHES, just the odd patch for SUCCESSION.
+        // main layout for PATCHES, just the odd patch for SUCCESSION
         if (TundraMoss.style() != TundraMoss.Style.PATCHES && random.nextInt(8) != 0) return false;
         Block moss = TundraMoss.colourAt(level.getSeed(), origin.getX(), origin.getZ());
         Block carpet = carpetFor(moss);

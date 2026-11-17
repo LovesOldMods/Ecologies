@@ -8,7 +8,7 @@ import net.minecraft.world.entity.ai.goal.target.TargetGoal;
 import java.util.Comparator;
 import java.util.EnumSet;
 
-// Vanilla targeting barely sees fish underwater. Bears and foxes never fished without this.
+// vanilla targeting barely sees fish underwater, bears and foxes basically never fished without this
 final class FishTargetGoal extends TargetGoal {
     private final PredatorRules rules;
     private LivingEntity fish;
@@ -22,7 +22,7 @@ final class FishTargetGoal extends TargetGoal {
 
     @Override
     public boolean canUse() {
-        // Goal selectors skip ticks, count down instead.
+        // goal selectors skip ticks so count down instead
         if (--cooldown > 0) return false;
         cooldown = 10;
         if (mob.getTarget() != null || !Predation.isHungry(mob, rules) || !PackHuntGoal.wild(mob)) return false;

@@ -16,7 +16,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-// Plain strings, checked on use. Keeps the JSON the same across versions.
+// plain strings checked when they're used, that way the JSON stays the same across versions
 public final class Matcher {
     public static final Matcher NONE = new Matcher(List.of());
     public static final Codec<Matcher> CODEC = Codec.either(Codec.STRING, Codec.STRING.listOf()).xmap(

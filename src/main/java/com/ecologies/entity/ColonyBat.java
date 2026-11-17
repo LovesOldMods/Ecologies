@@ -79,7 +79,7 @@ public class ColonyBat extends Bat {
         super(type, level);
     }
 
-    // Long path range for getting home from farms.
+    // long path range so they can get home from farms
     public static AttributeSupplier.Builder createColonyAttributes() {
         return Bat.createAttributes().add(Attributes.FOLLOW_RANGE, 48.0);
     }
@@ -101,7 +101,7 @@ public class ColonyBat extends Bat {
         if (knownCrops == null) knownCrops = crops;
     }
 
-    // Only from worldgen, breeding or spawn eggs.
+    // only from worldgen, breeding or spawn eggs
     @Override
     public boolean removeWhenFarAway(double distance) {
         return false;
@@ -136,7 +136,7 @@ public class ColonyBat extends Bat {
                 p -> p instanceof Player pl && (isLure(pl.getMainHandItem()) || isLure(pl.getOffhandItem())));
 
         if (isResting()) {
-            // Sleeps during the day unless bothered.
+            // sleeps during the day unless something bugs it
             if (night || luring != null || !level.getBlockState(blockPosition().above()).isRedstoneConductor(level, blockPosition())) {
                 setResting(false);
             }
@@ -154,7 +154,7 @@ public class ColonyBat extends Bat {
         }
         steerTowards(target);
         if (luring != null) {
-            // Keep away from the player's face.
+            // stay out of the player's face
             Vec3 away = position().subtract(luring.getEyePosition());
             double d = away.length();
             if (d < 2.0 && d > 1.0E-3) setDeltaMovement(getDeltaMovement().add(away.scale(0.12 / d)));
@@ -184,12 +184,12 @@ public class ColonyBat extends Bat {
             bestHomeDistance = distance;
             homeStuckTicks = 0;
         } else if (++homeStuckTicks % 60 == 0) {
-            // Stuck, new path and fly up.
+            // stuck, make a new path and fly up
             path = null;
             pathTarget = null;
             if (homeStuckTicks % 120 == 0 && level.isEmptyBlock(blockPosition().above(2))) target = blockPosition().above(3);
             if (homeStuckTicks >= 600 && level.getNearestPlayer(this, 24) == null) {
-                // Lost 30s with nobody around, just put it back.
+                // lost for 30s with nobody around, just put it back
                 setPos(homeSpot.getX() + 0.5, homeSpot.getY() + 0.1, homeSpot.getZ() + 0.5);
                 homeStuckTicks = 0;
             }
@@ -270,7 +270,7 @@ public class ColonyBat extends Bat {
             target = knownCrops.above(2);
             if (blockPosition().closerThan(knownCrops, 4) && tickCount % 40 == 0) {
                 feedOnCrops(level);
-                // Move on after feeding a while.
+                // move on after feeding for a while
                 if (random.nextInt(6) == 0) {
                     lastFeedingGround = knownCrops;
                     knownCrops = null;
@@ -284,9 +284,9 @@ public class ColonyBat extends Bat {
                 knownCrops = crop;
                 return;
             }
-            // Grass has insects too if there's no farm.
+            // grass has insects too if there's no farm around
             var ground = level.getBlockState(groundBelow(level));
-            // 26.x took grass and moss out of #dirt, check by name.
+            // 26.x took grass and moss out of #dirt so check them by name
             if ((ground.is(BlockTags.DIRT) || ground.is(Blocks.GRASS_BLOCK)
                     || ground.is(EcoTags.MOSS)) && random.nextInt(8) == 0) fed = true;
         }
@@ -299,7 +299,7 @@ public class ColonyBat extends Bat {
             BlockPos ground = groundBelow(level);
             int heightAbove = blockPosition().getY() - ground.getY();
             int dy = heightAbove > 8 ? -4 : heightAbove < 3 ? 2 : random.nextInt(3) - 1;
-            // Hold a heading, turn a bit each time, head back if too far from the roost.
+            // hold a heading and turn a bit each time, head back if it's too far from the roost
             if (Float.isNaN(exploreHeading)) exploreHeading = random.nextFloat() * Mth.TWO_PI;
             exploreHeading += (random.nextFloat() - 0.5F) * 1.2F;
             if (roost != null && !roost.closerThan(blockPosition(), MAX_ROAM * 0.75)) {
@@ -351,7 +351,7 @@ public class ColonyBat extends Bat {
                     level.levelEvent(1505, p, 0);
                 }
             } else if (state.is(Blocks.FARMLAND) && level.isEmptyBlock(p.above()) && random.nextFloat() < 0.05F) {
-                // Seeds from other farms.
+                // seeds from other farms
                 List<Block> crops = level.registryAccess().lookupOrThrow(Registries.BLOCK).get(SEEDS_ON_FARMLAND)
                         .map(set -> set.stream().map(h -> h.value()).toList()).orElse(List.of());
                 if (!crops.isEmpty()) {
@@ -422,7 +422,7 @@ public class ColonyBat extends Bat {
         }
         homelessTicks += 100;
         if (roost != null && homelessTicks >= HOMELESS_DEATH_TICKS) {
-            // No roost left anywhere.
+            // no roost left anywhere
             Compat.hurt(level, this, damageSources().starve(), getMaxHealth() * 2);
         }
     }

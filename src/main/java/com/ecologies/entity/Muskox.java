@@ -116,7 +116,7 @@ public class Muskox extends Animal {
         return calf;
     }
 
-    // Slow head turning, it's heavy.
+    // slow head turning since it's heavy
     @Override
     public int getHeadRotSpeed() {
         return 4;
@@ -197,7 +197,7 @@ public class Muskox extends Animal {
         return super.finalizeSpawn(level, difficulty, reason, data);
     }
 
-    // Not much grass in the tundra, any solid ground is fine.
+    // not much grass in the tundra so any solid ground works
     public static boolean checkSpawnRules(EntityType<Muskox> type, ServerLevelAccessor level,
                                           EntitySpawnReason reason, BlockPos pos, RandomSource random) {
         return level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP)

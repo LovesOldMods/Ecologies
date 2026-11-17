@@ -41,7 +41,7 @@ public class SkinnyLogBlock extends RotatedPillarBlock implements SimpleWaterlog
         }
     }
 
-    // Keep these relative to the axis. Six direction properties was 24k states and froze world loading.
+    // keep these relative to the axis, six direction properties was 24k states and froze world loading
     public static final EnumProperty<Arm> PLUS = EnumProperty.create("plus", Arm.class, Arm.NONE, Arm.END, Arm.JOINED);
     public static final EnumProperty<Arm> MINUS = EnumProperty.create("minus", Arm.class, Arm.NONE, Arm.END, Arm.JOINED);
     @SuppressWarnings("unchecked")
@@ -50,14 +50,14 @@ public class SkinnyLogBlock extends RotatedPillarBlock implements SimpleWaterlog
             EnumProperty.create("side_2", Arm.class, Arm.NONE, Arm.JOINED),
             EnumProperty.create("side_3", Arm.class, Arm.NONE, Arm.JOINED),
             EnumProperty.create("side_4", Arm.class, Arm.NONE, Arm.JOINED)};
-    // Leafy when 3+ neighbours are leaves.
+    // goes leafy when 3+ neighbours are leaves
     public static final BooleanProperty LEAFY = BooleanProperty.create("leafy");
     private static final Direction[] Y_SIDES = {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
     private static final Direction[] X_SIDES = {Direction.UP, Direction.NORTH, Direction.DOWN, Direction.SOUTH};
     private static final Direction[] Z_SIDES = {Direction.UP, Direction.EAST, Direction.DOWN, Direction.WEST};
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    // Keep this matching tools/gen_tundra.py.
+    // keep this matching tools/gen_tundra.py
     public static Direction[] sides(Direction.Axis axis) {
         return axis == Direction.Axis.Y ? Y_SIDES : axis == Direction.Axis.X ? X_SIDES : Z_SIDES;
     }

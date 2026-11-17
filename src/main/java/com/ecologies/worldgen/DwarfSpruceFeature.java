@@ -36,7 +36,7 @@ public class DwarfSpruceFeature extends EcoFeature {
         }
         BlockPos top = origin.above(height - 1);
 
-        // Bare lower trunk, then a ring every other block.
+        // bare lower trunk, then a ring of leaves every other block
         int firstWhorl = Math.max(logs - 1, height / 3);
         int span = Math.max(1, height - 1 - firstWhorl);
         for (int y = height - 1; y >= firstWhorl; y--) {
@@ -45,11 +45,11 @@ public class DwarfSpruceFeature extends EcoFeature {
             if (k % 2 == 1) continue;        // bare trunk between rings, so the tree stays open and tall
             ring(level, origin.above(y), t < 0.45 ? Ring.PLUS : t < 0.75 ? Ring.SQUARE : Ring.SQUARE_TIPPED);
         }
-        // Tip. Taller trees get a second leaf.
+        // the tip, taller trees get a second leaf
         leaf(level, top.above(), 1);
         if (height >= 9) leaf(level, top.above(2), 2);
 
-        // Join the logs after everything's placed.
+        // join the logs up once everything's placed
         for (BlockPos p : placed) set(level, p, SkinnyLogBlock.shape(level, p, level.getBlockState(p)));
 
         // Podzol in lichen woodlands.

@@ -13,6 +13,6 @@ public class GuanoLayerBlock extends SnowLayerBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        // Don't melt like snow.
+        // doesn't melt like snow does
     }
 }

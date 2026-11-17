@@ -20,7 +20,7 @@ public class MossSuccessionFeature extends EcoFeature {
                 if (!EcoBiomes.isTundra(level.getBiome(top))) continue;
                 var state = level.getBlockState(top);
                 if (!(state.is(Blocks.GRASS_BLOCK) || state.is(Blocks.DIRT))) continue;
-                // 3 wide, sometimes 4, sometimes broken. Don't want a clean outline.
+                // 3 wide, sometimes 4, sometimes broken, I don't want a clean outline
                 int width = random.nextInt(6) == 0 ? 4 : 3;
                 if (random.nextInt(10) == 0 || !TundraMoss.nearRock(level, top, width)) continue;
                 Block moss = TundraMoss.colourAt(seed, x, z);

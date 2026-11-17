@@ -23,11 +23,11 @@ final class DefendGoal extends Goal {
     private static final int RETREAT_TICKS = 60, REARM_TICKS = 200;
     private LivingEntity threat;
     private int cooldown, ticks, retreat;
-    // Hurt count at the last ram. A new hit sets it off again.
+    // hurt count at the last ram, a new hit sets it off again
     private int lastRamTick = -100000, hurtAtRam;
     private boolean lowered;
 
-    // Same events as the goat ram, both mobs animate them.
+    // same events as the goat ram so both mobs animate them
     private void lowerHead(boolean down) {
         if (lowered == down) return;
         lowered = down;
@@ -123,7 +123,7 @@ final class DefendGoal extends Goal {
         ticks++;
         if (cooldown > 0) cooldown--;
         if (retreat > 0) {
-            // Back off toward the herd.
+            // back off toward the herd
             if (--retreat == 0) threat = null;
             return;
         }

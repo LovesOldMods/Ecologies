@@ -32,7 +32,7 @@ public final class Compat {
         /*target.hurt(source, amount);*/
     }
 
-    // Check by id. The EntityType constants moved in 26.x.
+    // checking by id since the EntityType constants got moved around in 26.x
     public static boolean isType(Entity entity, String vanillaId) {
         var key = BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType());
         return key.getNamespace().equals("minecraft") && key.getPath().equals(vanillaId);

@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-// Testing commands.
+// testing commands, mostly so I don't have to wait around
 public final class EcoCommands {
     private EcoCommands() {}
 
@@ -106,7 +106,7 @@ public final class EcoCommands {
         return 1;
     }
 
-    // Reads the biome source directly, doesn't make chunks.
+    // reads the biome source directly so it doesn't make any chunks
     private static int biomes(CommandContext<CommandSourceStack> ctx) {
         int r = IntegerArgumentType.getInteger(ctx, "radius"), step = 64, n = r * 2 / step + 1;
         ServerLevel level = ctx.getSource().getLevel();

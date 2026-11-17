@@ -19,7 +19,7 @@ import terrablender.api.SurfaceRuleManager;
 import terrablender.api.MaterialRuleManager;
 //?}
 
-// 1.21.1 reads the surface rules from ecologies/surface_rules.json in the jar.
+// 1.21.1 reads the surface rules from ecologies/surface_rules.json in the jar instead
 public final class EcoWorldgen {
     private EcoWorldgen() {}
 

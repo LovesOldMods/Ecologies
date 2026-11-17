@@ -64,7 +64,7 @@ public final class Predation {
     private static boolean isHuntingInTheOpen(Entity maybePredator, Entity prey) {
         if (!isHungryPredatorOf(maybePredator, prey)) return false;
         Mob predator = (Mob) maybePredator;
-        // Fish only react to predators in the water that they can see.
+        // fish only react to predators that are in the water and can be seen
         if (isFish(prey) && !(predator.isInWater() && prey instanceof LivingEntity fish && fish.hasLineOfSight(predator))) return false;
         LivingEntity target = predator.getTarget();
         if (target == null || target.getType() != prey.getType()) return false;
@@ -93,7 +93,7 @@ public final class Predation {
         PredatorRules rules = EcoDataTypes.predatorRules(predator.getType());
         if (rules == null || !rules.prey().test(target.getType())) return;
         if (predator.getLastHurtByMob() == target) return; // fighting back is not hunting
-        // Pets attack whatever their owner says.
+        // pets attack whatever their owner tells them to
         if (predator instanceof TamableAnimal pet && pet.isTame()) return;
 
         if (!isHungry(predator, rules) || HuntGoal.gaveUpOn(predator, target) || scared(predator)) {
@@ -142,7 +142,7 @@ public final class Predation {
             }
             for (PredatorRules rules : EcoDataTypes.PREDATION.values()) {
                 if (rules.preyFleeRange() > 0 && rules.prey().test(prey.getType())) {
-                    // Close to the hunters' pace. Solo wolves and foxes gain, packs wear them out.
+                    // close to the hunters' pace, solo wolves and foxes gain on them and packs wear them out
                     prey.goalSelector.addGoal(1, new AvoidEntityGoal<>(prey, Mob.class, rules.preyFleeRange(), 1.0, 1.25,
                             other -> !PreyStamina.exhausted(prey) && isHuntingInTheOpen(other, prey)));
                 }
@@ -151,7 +151,7 @@ public final class Predation {
 
         if (entity instanceof Mob predator) {
             PredatorRules rules = EcoDataTypes.predatorRules(predator.getType());
-            // Bear rear-ups stop it dead and the prey gets away. Bite on the run instead.
+            // bear rear-ups stop it dead and the prey gets away, so bite on the run instead
             if (rules != null && rules.chaseSpeed() > 0 && predator instanceof PathfinderMob runner) {
                 runner.goalSelector.addGoal(0, new ChaseGoal(runner, rules));
             }
@@ -306,13 +306,13 @@ public final class Predation {
             LivingEntity prey = quarry;
             if (prey == null) return;
             ticks++;
-            // Lock back on if it lost sight.
+            // lock back on if it lost sight
             if (mob.getTarget() != prey) mob.setTarget(prey);
             boolean onGround = mob.onGround();
             boolean leapt = wasOnGround && !onGround && mob.getDeltaMovement().y > 0.15;
             wasOnGround = onGround;
             if (sneaking(mob)) {
-                // Still stalking, don't count it against the chase.
+                // still stalking so don't count it against the chase
                 sprint(false);
                 lastPos = mob.position();
                 stuckChecks = 0;
@@ -332,7 +332,7 @@ public final class Predation {
                 }
             }
             if (leapt && distance < 8.0) leadLeap(prey);
-            // Swim straight at fish, walking paths can't go under.
+            // swim straight at fish, walking paths can't go under
             if (mob.isInWater() && prey.isInWater() && isFish(prey)) {
                 Vec3 to = prey.position().add(0, prey.getBbHeight() / 2, 0)
                         .subtract(mob.position().add(0, mob.getBbHeight() / 3, 0));
@@ -354,7 +354,7 @@ public final class Predation {
                 stuckChecks = 0;
                 return;
             }
-            // Barely moved in a second, it's stuck.
+            // barely moved in a second so it's stuck
             stuckChecks++;
             if (mob.onGround() && !mob.isInWater()) mob.getJumpControl().jump();
             if (stuckChecks >= STUCK_GIVE_UP) {
@@ -428,7 +428,7 @@ public final class Predation {
         public void tick() {
             super.tick();
             LivingEntity target = mob.getTarget();
-            // Dive after fish, don't paw at the surface.
+            // dive after fish instead of pawing at the surface
             if (target != null && target.isInWater() && mob.isInWater() && target.getY() < mob.getY() - 0.4) {
                 mob.setDeltaMovement(mob.getDeltaMovement().add(0, -0.06, 0));
             }

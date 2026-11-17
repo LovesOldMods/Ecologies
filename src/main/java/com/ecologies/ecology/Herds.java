@@ -50,7 +50,7 @@ public final class Herds {
         AnimalRules.Grazing grazing = EcoDataTypes.forAnimal(EcoDataTypes.GRAZING, mob.getType(), AnimalRules.Grazing::animal);
         if (grazing != null) {
             mob.goalSelector.addGoal(4, new GrazeGoal(mob, grazing));
-            // New animals wait before their first drop.
+            // new animals wait a bit before their first drop
             if (EntityData.getLong(mob, FIRST_DROP, Long.MIN_VALUE) == Long.MIN_VALUE) {
                 EntityData.putLong(mob, FIRST_DROP, mob.level().getGameTime() + grazing.firstDropDelay());
             }
@@ -237,7 +237,7 @@ public final class Herds {
 
         @Override
         public void start() {
-            // Aim inside the herd, not the exact middle.
+            // aim somewhere inside the herd, not the exact middle
             Vec3 toward = mob.position().add(middle.subtract(mob.position()).scale(0.7));
             mob.getNavigation().moveTo(toward.x, toward.y, toward.z, rules.speed());
         }

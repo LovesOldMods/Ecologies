@@ -80,7 +80,7 @@ public class SproutedGlowLichenBlock extends GlowLichenBlock {
         if (rules == null || random.nextFloat() >= rules.tickChance()) return;
         if (rules.needsSky() && (!Compat.isDay(level) || level.getBrightness(LightLayer.SKY, pos) < 12)) return;
 
-        // Only blocks it's on that can still break down.
+        // only the blocks it's on that can still break down
         List<Direction> eating = new ArrayList<>();
         for (Direction face : Direction.values()) {
             if (isAttachedTo(state, face) && rules.isSubstrate(level.getBlockState(pos.relative(face)))) eating.add(face);
@@ -106,7 +106,7 @@ public class SproutedGlowLichenBlock extends GlowLichenBlock {
         int r = rules.spreadRadius();
         for (int attempt = 0; attempt < 8; attempt++) {
             BlockPos picked = pos.offset(random.nextInt(2 * r + 1) - r, random.nextInt(2 * r + 1) - r, random.nextInt(2 * r + 1) - r);
-            // Try the picked spot and its neighbours, not the whole area.
+            // try the picked spot and its neighbours instead of the whole area
             if (tryPlace(level, picked, rules, spreadState)) return;
             for (Direction d : Direction.values()) {
                 if (tryPlace(level, picked.relative(d), rules, spreadState)) return;
@@ -150,7 +150,7 @@ public class SproutedGlowLichenBlock extends GlowLichenBlock {
         return state.hasProperty(property) && state.getValue(property);
     }
 
-    // Shears stop it, like cave vines.
+    // shears stop it, same as cave vines
 
     private boolean snip(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand) {
         if (state.getValue(SNIPPED) || !(stack.is(Items.SHEARS) || stack.is(Tags.Items.TOOLS_SHEAR))) return false;
@@ -183,7 +183,7 @@ public class SproutedGlowLichenBlock extends GlowLichenBlock {
     }
     *///?}
 
-    // No bone meal, it already spreads and would be too cheap.
+    // no bone meal, it already spreads on its own and it'd be way too cheap
 
     //? if >=1.21.5 {
     @Override

@@ -20,7 +20,7 @@ public class TundraRegion extends Region {
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
-        // Snowy plains and ice spikes become tundra, the dry half of snowy taiga becomes lichen woodland.
+        // snowy plains and ice spikes turn into tundra, the dry half of snowy taiga turns into lichen woodland
         addModifiedVanillaOverworldBiomes(pair -> {
             ResourceKey<Biome> biome = pair.getSecond();
             Climate.ParameterPoint p = pair.getFirst();

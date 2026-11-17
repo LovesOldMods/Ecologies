@@ -29,7 +29,7 @@ public class SurfaceLichenFeature extends EcoFeature {
             BlockState ground = level.getBlockState(below);
             if (!ground.isFaceSturdy(level, below, Direction.UP)) continue;
             if (tundra) {
-                // Tundra lichen stays on the rock, only a bit spills onto the edge.
+                // tundra lichen mostly stays on the rock, only a bit spills onto the edge
                 if (!TundraMoss.isRock(ground) && (random.nextInt(4) != 0 || !TundraMoss.nearRock(level, below, 1))) continue;
             } else if (!(ground.is(BlockTags.BASE_STONE_OVERWORLD) || ground.is(Blocks.SMOOTH_BASALT) || ground.is(BlockTags.DIRT)
                     || ground.is(EcoTags.MOSS) || ground.is(Blocks.GRAVEL) || ground.is(Blocks.COBBLED_DEEPSLATE))) continue;

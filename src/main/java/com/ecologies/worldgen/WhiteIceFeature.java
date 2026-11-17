@@ -22,7 +22,7 @@ public class WhiteIceFeature extends EcoFeature {
                 top.set(x, level.getHeight(Heightmap.Types.MOTION_BLOCKING, x, z), z);
                 Holder<Biome> biome = level.getBiome(top);
                 if (!EcoBiomes.isTundra(biome)) continue;
-                // Clear snow from the neighbouring biomes' freeze pass, it runs before this.
+                // clear out snow from the neighbouring biomes' freeze pass since it runs before this
                 for (int dy = 0; dy >= -1; dy--) {
                     BlockPos p = top.offset(0, dy, 0);
                     if (level.getBlockState(p).is(Blocks.SNOW)) {

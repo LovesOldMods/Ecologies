@@ -62,7 +62,7 @@ public class FlurryParticle extends
     public void tick() {
         float sway = Mth.sin(age * swaySpeed + swayPhase);
         if (onGround) {
-            // Landed, stop drifting and fade.
+            // landed, stop drifting and fade out
             xd = 0;
             zd = 0;
             if (++landedTicks > 30) remove();
@@ -74,7 +74,7 @@ public class FlurryParticle extends
         }
         if (age > lifetime - 20) setAlpha(Math.max(0.0F, (lifetime - age) / 20.0F));
         super.tick();
-        // super.tick() messes with the speeds, put ours back.
+        // super.tick() messes with the speeds so put ours back
     }
 
     public static class Provider implements ParticleProvider<SimpleParticleType> {

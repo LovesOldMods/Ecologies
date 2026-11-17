@@ -22,7 +22,7 @@ public final class Flurries {
         float cloud = level.getRainLevel(1.0F);
         if (cloud < 0.2F) return;
         RandomSource random = level.getRandom();
-        // Slow wind that drifts over the day.
+        // slow wind that drifts around over the day
         float t = level.getGameTime() / 2400.0F;
         double windX = Mth.sin(t) * 0.02, windZ = Mth.cos(t * 0.7F) * 0.02;
         float wanted = FLAKES_PER_TICK * cloud;

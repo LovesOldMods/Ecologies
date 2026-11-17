@@ -55,7 +55,7 @@ public class BatColonyFeature extends EcoFeature {
                     if (!level.getBlockState(air.below()).isAir() && dy > -1) continue; // start from near the floor
                     BlockPos ceiling = CaveMouth.rockAbove(level, air, 9);
                     if (ceiling == null || !level.getBlockState(ceiling).is(EcoTags.ROOST_CEILING)) continue;
-                    // Rock only, not the sky past the mouth.
+                    // rock only, the sky past the mouth doesn't count
                     if (level.getHeight(Heightmap.Types.WORLD_SURFACE_WG, air.getX(), air.getZ()) <= ceiling.getY()) continue;
                     double d = dx * dx + dz * dz + random.nextDouble();
                     if (isLedge(level, ceiling) && clearBelow(level, ceiling, 4)) {
@@ -113,7 +113,7 @@ public class BatColonyFeature extends EcoFeature {
         return false;
     }
 
-    // Only half the spots in dripstone caves or they fill up with roosts.
+    // only use half the spots in dripstone caves or they get packed with roosts
     private static boolean tryRoost(WorldGenLevel level, RandomSource random, BlockPos ceiling) {
         if (!level.getBlockState(ceiling).is(EcoTags.ROOST_CEILING)) return false;
         for (int h = 1; h <= 4; h++) {
@@ -138,10 +138,10 @@ public class BatColonyFeature extends EcoFeature {
 
     private static final int SPACING = 15;
 
-    // Roosts placed this session. Stops side by side chunks both getting one.
+    // roosts placed this session, stops chunks next to each other both getting one
     private static final Map<Long, List<BlockPos>> PLACED = new ConcurrentHashMap<>();
 
-    // Can only read the chunks worldgen allows, the list covers the rest.
+    // worldgen only lets us read some chunks, the list covers the rest
     private static boolean spacedOut(WorldGenLevel level, BlockPos pos) {
         List<BlockPos> placed = PLACED.computeIfAbsent(level.getSeed(), k -> new ArrayList<>());
         synchronized (placed) {
@@ -264,7 +264,7 @@ public class BatColonyFeature extends EcoFeature {
         int have = here.is(EcoBlocks.GUANO_LAYER.get()) ? here.getValue(SnowLayerBlock.LAYERS) : 0;
         if (!here.isAir() && have == 0) return;
         BlockState pile = EcoBlocks.GUANO_LAYER.get().defaultBlockState()
-                // Max 3 at worldgen. Bats stack it higher later.
+                // max 3 at worldgen, the bats stack it higher on their own later
                 .setValue(SnowLayerBlock.LAYERS, Math.min(3, Math.max(have, layers)));
         if (pile.canSurvive(level, at)) set(level, at, pile);
     }

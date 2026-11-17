@@ -57,14 +57,14 @@ public class TundraFloraFeature extends EcoFeature {
             return random.nextInt(4) == 0 ? weighted(random, red, 0, orange, RARE, yellow, SEMI_RARE) : null;
         }
         if (g == Blocks.DEEPSLATE || g == Blocks.GRAVEL || g == Blocks.TUFF || g == Blocks.SMOOTH_BASALT || g == Blocks.COARSE_DIRT) {
-            // Rock is lichen only (SurfaceLichenFeature), plus the odd bit of snow.
+            // rock only gets lichen (SurfaceLichenFeature handles that) and the odd bit of snow
             return random.nextInt(6) == 0 ? Blocks.SNOW.defaultBlockState()
                     .setValue(SnowLayerBlock.LAYERS, 1 + random.nextInt(2)) : null;
         }
         return null;
     }
 
-    // No dry grass on 1.21.1, use dead bushes.
+    // 1.21.1 doesn't have dry grass so dead bushes it is
     private static BlockState dryGrass(RandomSource random) {
         String id = random.nextInt(4) == 0 ? "tall_dry_grass" : "short_dry_grass";
         return BuiltInRegistries.BLOCK

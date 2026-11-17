@@ -145,7 +145,7 @@ public final class EcoBlocks {
 
     private EcoBlocks() {}
 
-    // 1.21.2+ needs the properties late, they carry the block id.
+    // 1.21.2+ wants the properties late since they carry the block id
     private static <B extends Block> DeferredBlock<B> register(String name, Function<BlockBehaviour.Properties, B> factory,
                                                              Supplier<BlockBehaviour.Properties> properties) {
         //? if >=1.21.2 {

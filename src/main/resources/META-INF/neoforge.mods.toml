@@ -8,10 +8,10 @@ modId = "${id}"
 displayName = "${name}"
 version = "${version}"
 authors = "${authors}"
-credits = "All the designs, textures and models are by Klei Wright (Matcha Flavoured), used under CC BY-NC-SA 4.0."
+credits = "Designs, textures and models by Klei Wright (Matcha Flavoured), used under CC BY-NC-SA 4.0."
 description = '''
-Makes the world feel a bit more alive. Lichen eats away at stone, muskox graze on it, bat colonies
-come out at night to feed over your crops, and predators hunt when they're hungry instead of wiping
+Makes the world feel a bit more alive, lichen eats away at stone, muskox graze on it, bat colonies
+come out at night to feed over your crops and predators only hunt when they're hungry instead of wiping
 everything out.
 '''
 

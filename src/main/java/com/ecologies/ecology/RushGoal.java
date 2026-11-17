@@ -33,7 +33,7 @@ final class RushGoal extends Goal {
     public boolean canUse() {
         LivingEntity prey = prey();
         if (prey == null || mob.distanceTo(prey) > rules.rushRange()) return false;
-        // Fish from the bank only. In the water it just bites.
+        // fish from the bank only, once it's in the water it just bites
         return !prey.isInWater() || (Predation.isFish(prey) && !mob.isInWater());
     }
 
@@ -93,7 +93,7 @@ final class RushGoal extends Goal {
             }
         } else if ((leapNext || (Predation.isFish(prey) && !mob.isInWater())) && distance < LEAP_RANGE + 1
                 && distance > reach * 0.8 && mob.onGround() && leapCooldown == 0) {
-            // Aim where it'll be in about 10 ticks.
+            // aim for where it'll be in about 10 ticks
             Vec3 aim = lead(prey, 10).subtract(mob.position());
             Vec3 flat = new Vec3(aim.x, 0, aim.z);
             double len = flat.length();
@@ -117,7 +117,7 @@ final class RushGoal extends Goal {
         if (distance <= reach && biteCooldown == 0) {
             biteCooldown = 12;
             Predation.bite(mob, prey);
-            // Only pounce again sometimes after a bite.
+            // only pounce again sometimes after a bite
             leapNext = lastWasLeap ? false : mob.getRandom().nextFloat() < 0.4F;
             lastWasLeap = false;
         } else if (!leapNext && !airborne && distance > LEAP_RANGE + 1 && !lastWasLeap) {
