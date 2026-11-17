@@ -1,0 +1,77 @@
+gamerule advance_time false
+time set 13000
+gamerule spawn_mobs false
+forceload add -100 -100 100 100
+fill -97 99 -7 -83 102 7 minecraft:glass hollow
+fill -96 99 -6 -84 99 6 minecraft:grass_block
+summon minecraft:wolf -94 100 -4
+summon minecraft:sheep -86 100 4
+fill -81 99 -7 -67 102 7 minecraft:glass hollow
+fill -80 99 -6 -68 99 6 minecraft:grass_block
+summon minecraft:wolf -78 100 -4
+summon minecraft:sheep -70 100 4
+fill -65 99 -7 -51 102 7 minecraft:glass hollow
+fill -64 99 -6 -52 99 6 minecraft:grass_block
+summon minecraft:wolf -62 100 -4
+summon minecraft:sheep -54 100 4
+fill -49 99 -7 -35 102 7 minecraft:glass hollow
+fill -48 99 -6 -36 99 6 minecraft:grass_block
+summon minecraft:wolf -46 100 -4
+summon minecraft:sheep -38 100 4
+fill -33 99 -7 -19 102 7 minecraft:glass hollow
+fill -32 99 -6 -20 99 6 minecraft:grass_block
+summon minecraft:wolf -30 100 -4
+summon minecraft:sheep -22 100 4
+fill -17 99 -7 -3 102 7 minecraft:glass hollow
+fill -16 99 -6 -4 99 6 minecraft:grass_block
+summon minecraft:wolf -14 100 -4
+summon minecraft:sheep -6 100 4
+fill 3 99 -7 17 102 7 minecraft:glass hollow
+fill 4 99 -6 16 99 6 minecraft:grass_block
+summon minecraft:fox 6 100 -4
+summon minecraft:chicken 14 100 4
+fill 19 99 -7 33 102 7 minecraft:glass hollow
+fill 20 99 -6 32 99 6 minecraft:grass_block
+summon minecraft:fox 22 100 -4
+summon minecraft:chicken 30 100 4
+fill 35 99 -7 49 102 7 minecraft:glass hollow
+fill 36 99 -6 48 99 6 minecraft:grass_block
+summon minecraft:fox 38 100 -4
+summon minecraft:chicken 46 100 4
+fill 51 99 -7 65 102 7 minecraft:glass hollow
+fill 52 99 -6 64 99 6 minecraft:grass_block
+summon minecraft:fox 54 100 -4
+summon minecraft:chicken 62 100 4
+fill 67 99 -7 81 102 7 minecraft:glass hollow
+fill 68 99 -6 80 99 6 minecraft:grass_block
+summon minecraft:fox 70 100 -4
+summon minecraft:chicken 78 100 4
+fill 83 99 -7 97 102 7 minecraft:glass hollow
+fill 84 99 -6 96 99 6 minecraft:grass_block
+summon minecraft:fox 86 100 -4
+summon minecraft:chicken 94 100 4
+#wait 60
+execute if entity @e[type=minecraft:sheep,x=-97,y=95,z=-7,dx=14,dy=10,dz=14] run say wolf arena 0 prey ALIVE
+execute unless entity @e[type=minecraft:sheep,x=-97,y=95,z=-7,dx=14,dy=10,dz=14] run say wolf arena 0 prey CAUGHT
+execute if entity @e[type=minecraft:sheep,x=-81,y=95,z=-7,dx=14,dy=10,dz=14] run say wolf arena 1 prey ALIVE
+execute unless entity @e[type=minecraft:sheep,x=-81,y=95,z=-7,dx=14,dy=10,dz=14] run say wolf arena 1 prey CAUGHT
+execute if entity @e[type=minecraft:sheep,x=-65,y=95,z=-7,dx=14,dy=10,dz=14] run say wolf arena 2 prey ALIVE
+execute unless entity @e[type=minecraft:sheep,x=-65,y=95,z=-7,dx=14,dy=10,dz=14] run say wolf arena 2 prey CAUGHT
+execute if entity @e[type=minecraft:sheep,x=-49,y=95,z=-7,dx=14,dy=10,dz=14] run say wolf arena 3 prey ALIVE
+execute unless entity @e[type=minecraft:sheep,x=-49,y=95,z=-7,dx=14,dy=10,dz=14] run say wolf arena 3 prey CAUGHT
+execute if entity @e[type=minecraft:sheep,x=-33,y=95,z=-7,dx=14,dy=10,dz=14] run say wolf arena 4 prey ALIVE
+execute unless entity @e[type=minecraft:sheep,x=-33,y=95,z=-7,dx=14,dy=10,dz=14] run say wolf arena 4 prey CAUGHT
+execute if entity @e[type=minecraft:sheep,x=-17,y=95,z=-7,dx=14,dy=10,dz=14] run say wolf arena 5 prey ALIVE
+execute unless entity @e[type=minecraft:sheep,x=-17,y=95,z=-7,dx=14,dy=10,dz=14] run say wolf arena 5 prey CAUGHT
+execute if entity @e[type=minecraft:chicken,x=3,y=95,z=-7,dx=14,dy=10,dz=14] run say fox arena 0 prey ALIVE
+execute unless entity @e[type=minecraft:chicken,x=3,y=95,z=-7,dx=14,dy=10,dz=14] run say fox arena 0 prey CAUGHT
+execute if entity @e[type=minecraft:chicken,x=19,y=95,z=-7,dx=14,dy=10,dz=14] run say fox arena 1 prey ALIVE
+execute unless entity @e[type=minecraft:chicken,x=19,y=95,z=-7,dx=14,dy=10,dz=14] run say fox arena 1 prey CAUGHT
+execute if entity @e[type=minecraft:chicken,x=35,y=95,z=-7,dx=14,dy=10,dz=14] run say fox arena 2 prey ALIVE
+execute unless entity @e[type=minecraft:chicken,x=35,y=95,z=-7,dx=14,dy=10,dz=14] run say fox arena 2 prey CAUGHT
+execute if entity @e[type=minecraft:chicken,x=51,y=95,z=-7,dx=14,dy=10,dz=14] run say fox arena 3 prey ALIVE
+execute unless entity @e[type=minecraft:chicken,x=51,y=95,z=-7,dx=14,dy=10,dz=14] run say fox arena 3 prey CAUGHT
+execute if entity @e[type=minecraft:chicken,x=67,y=95,z=-7,dx=14,dy=10,dz=14] run say fox arena 4 prey ALIVE
+execute unless entity @e[type=minecraft:chicken,x=67,y=95,z=-7,dx=14,dy=10,dz=14] run say fox arena 4 prey CAUGHT
+execute if entity @e[type=minecraft:chicken,x=83,y=95,z=-7,dx=14,dy=10,dz=14] run say fox arena 5 prey ALIVE
+execute unless entity @e[type=minecraft:chicken,x=83,y=95,z=-7,dx=14,dy=10,dz=14] run say fox arena 5 prey CAUGHT

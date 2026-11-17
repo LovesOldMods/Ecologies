@@ -1,0 +1,27 @@
+{
+  "input": "minecraft:crimson_fungus",
+  "result": "minecraft:crimson_fungus",
+  "growth_time": 12000,
+  "min_yield": 1,
+  "max_yield": 2,
+  "extras": [
+    {
+      "item": "minecraft:nether_wart_block",
+      "chance": 0.6,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "item": "minecraft:shroomlight",
+      "chance": 0.25,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "item": "minecraft:weeping_vines",
+      "chance": 0.5,
+      "min": 1,
+      "max": 3
+    }
+  ]
+}

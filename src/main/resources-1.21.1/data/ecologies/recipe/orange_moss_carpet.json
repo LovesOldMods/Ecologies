@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "ecologies:orange_moss_block"
+    }
+  },
+  "result": {
+    "id": "ecologies:orange_moss_carpet",
+    "count": 3
+  }
+}

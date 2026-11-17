@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "S S",
+    "SGS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "tag": "minecraft:wooden_slabs"
+    },
+    "G": {
+      "item": "ecologies:guano_block"
+    }
+  },
+  "result": {
+    "id": "ecologies:mushroom_farm",
+    "count": 1
+  }
+}

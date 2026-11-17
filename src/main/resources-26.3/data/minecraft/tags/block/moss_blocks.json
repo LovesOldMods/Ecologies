@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "ecologies:red_moss_block",
+    "ecologies:orange_moss_block",
+    "ecologies:yellow_moss_block"
+  ]
+}

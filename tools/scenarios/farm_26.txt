@@ -1,0 +1,17 @@
+gamerule advance_time false
+forceload add -8 -8 8 8
+fill -2 99 -2 2 99 2 minecraft:stone
+setblock 0 100 0 ecologies:mushroom_farm
+say MUSHROOM FARM: planting via block entity data, then checking fill rises and it turns full
+setblock 0 100 0 ecologies:mushroom_farm[stage=1,fill=1]{species:"ecologies:red_mushroom",planted:"minecraft:red_mushroom",progress:0,display:{Name:"minecraft:red_mushroom"}}
+#wait 5
+data merge block 0 100 0 {progress:999999}
+#wait 3
+execute if block 0 100 0 ecologies:mushroom_farm[stage=2,fill=7] run say PASS farm full at fill 7
+execute unless block 0 100 0 ecologies:mushroom_farm[stage=2] run say FAIL farm not full
+setblock 1 100 0 ecologies:mushroom_farm[stage=1,fill=1]{species:"ecologies:red_mushroom",planted:"minecraft:red_mushroom",progress:0,display:{Name:"minecraft:red_mushroom"}}
+#wait 2
+data merge block 1 100 0 {progress:3000}
+#wait 3
+execute if block 1 100 0 ecologies:mushroom_farm[stage=1,fill=1] run say FAIL fill stayed at 1
+execute unless block 1 100 0 ecologies:mushroom_farm[stage=1,fill=1] run say PASS fill rose partway

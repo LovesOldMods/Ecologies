@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "ecologies:guano_block",
+    "ecologies:aged_guano_block",
+    "ecologies:bat_roost",
+    "ecologies:mushroom_farm",
+    "ecologies:smooth_basalt_iron_ore",
+    "ecologies:white_ice",
+    "ecologies:white_packed_ice",
+    "ecologies:red_moss_block",
+    "ecologies:orange_moss_block",
+    "ecologies:yellow_moss_block"
+  ]
+}

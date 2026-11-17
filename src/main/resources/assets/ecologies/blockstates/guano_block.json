@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ecologies:block/guano_block"
+    }
+  }
+}

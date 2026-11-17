@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "minecraft:block/potatoes_stage3"
+    },
+    "age=1": {
+      "model": "ecologies:block/bolting_potatoes"
+    },
+    "age=2": {
+      "model": "ecologies:block/bolting_potatoes"
+    },
+    "age=3": {
+      "model": "ecologies:block/bolting_potatoes"
+    },
+    "age=4": {
+      "model": "ecologies:block/bolting_potatoes"
+    },
+    "age=5": {
+      "model": "ecologies:block/bolting_potatoes"
+    },
+    "age=6": {
+      "model": "ecologies:block/bolting_potatoes"
+    },
+    "age=7": {
+      "model": "ecologies:block/bolting_potatoes"
+    }
+  }
+}

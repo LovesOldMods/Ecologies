@@ -1,0 +1,24 @@
+gamerule advance_time false
+time set noon
+forceload add -32 -32 32 32
+fill -6 199 -6 6 199 6 minecraft:stone
+fill -6 200 -6 6 210 6 minecraft:air
+fill -2 200 -2 2 200 2 minecraft:glow_lichen[down=true]
+summon ecologies:muskox 0 200 4
+summon ecologies:muskox 1 200 4
+summon ecologies:muskox -1 200 4
+#wait 40
+say graze check, items dropped so far:
+execute as @e[type=minecraft:item] run data get entity @s Item
+say lichen left (filled count):
+fill -6 200 -6 6 200 6 minecraft:air replace minecraft:glow_lichen
+fill 20 199 -6 32 199 6 minecraft:stone
+fill 20 200 -6 32 210 6 minecraft:air
+summon ecologies:muskox 26 200 0
+summon minecraft:polar_bear 22 200 0
+kill @e[type=minecraft:item]
+#wait 40
+say polar bear check, drops near the bear:
+execute as @e[type=minecraft:item,x=20,y=195,z=-6,dx=12,dy=20,dz=12] run data get entity @s Item.id
+execute unless entity @e[type=ecologies:muskox,x=20,y=195,z=-6,dx=12,dy=20,dz=12] run say PASS polar bear hunted the muskox
+execute if entity @e[type=ecologies:muskox,x=20,y=195,z=-6,dx=12,dy=20,dz=12] run say muskox near bear still alive

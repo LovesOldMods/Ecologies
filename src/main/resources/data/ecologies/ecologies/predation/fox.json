@@ -1,0 +1,17 @@
+{
+  "predator": "minecraft:fox",
+  "prey": [
+    "minecraft:chicken",
+    "minecraft:rabbit",
+    "minecraft:cod",
+    "minecraft:salmon",
+    "minecraft:tropical_fish"
+  ],
+  "hunger_cooldown": 12000,
+  "prefers_babies": true,
+  "eats_kill": true,
+  "prey_flee_range": 8,
+  "stalks": true,
+  "sprint": 1.25,
+  "rush_range": 5
+}

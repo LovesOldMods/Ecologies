@@ -1,0 +1,18 @@
+{
+  "actor": "ecologies:sprouted_glow_lichen",
+  "needs_sky": true,
+  "tick_chance": 0.25,
+  "spread_chance": 0.5,
+  "spread_block": "minecraft:glow_lichen",
+  "spread_radius": 8,
+  "crowding_limit": 12,
+  "breakdown": [
+    { "from": "minecraft:stone", "to": "minecraft:cobblestone" },
+    { "from": ["minecraft:deepslate", "minecraft:polished_deepslate"], "to": "minecraft:cobbled_deepslate" },
+    { "from": ["minecraft:cobblestone", "minecraft:mossy_cobblestone", "minecraft:cobbled_deepslate", "minecraft:andesite", "minecraft:diorite"], "to": "minecraft:gravel" },
+    { "from": ["minecraft:granite", "minecraft:sandstone"], "to": "minecraft:sand" },
+    { "from": "minecraft:red_sandstone", "to": "minecraft:red_sand" },
+    { "from": ["minecraft:basalt", "minecraft:smooth_basalt", "minecraft:tuff"], "to": "minecraft:coarse_dirt" },
+    { "from": "minecraft:coarse_dirt", "to": "minecraft:dirt" }
+  ]
+}

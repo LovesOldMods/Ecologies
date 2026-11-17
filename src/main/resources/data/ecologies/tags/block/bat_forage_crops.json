@@ -1,0 +1,38 @@
+{
+  "values": [
+    "#minecraft:crops",
+    "#minecraft:flowers",
+    "minecraft:sweet_berry_bush",
+    "minecraft:cave_vines",
+    "minecraft:cave_vines_plant",
+    "minecraft:cocoa",
+    "minecraft:melon",
+    "minecraft:pumpkin",
+    "minecraft:flowering_azalea",
+    "minecraft:flowering_azalea_leaves",
+    {
+      "id": "#c:crops",
+      "required": false
+    },
+    {
+      "id": "#c:flowers",
+      "required": false
+    },
+    {
+      "id": "#c:fruits",
+      "required": false
+    },
+    {
+      "id": "#c:fruit_leaves",
+      "required": false
+    },
+    {
+      "id": "#c:berry_bushes",
+      "required": false
+    },
+    "ecologies:bolting_wheat",
+    "ecologies:bolting_carrots",
+    "ecologies:bolting_potatoes",
+    "ecologies:bolting_beetroots"
+  ]
+}

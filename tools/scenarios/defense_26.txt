@@ -1,0 +1,20 @@
+gamerule advance_time false
+time set noon
+gamerule spawn_mobs false
+forceload add -60 -60 60 60
+fill -50 98 -20 50 104 20 minecraft:glass hollow
+fill -49 98 -19 49 98 19 minecraft:grass_block
+fill -49 99 -19 49 103 19 minecraft:air
+fill 0 99 -19 0 103 19 minecraft:glass
+summon ecologies:muskox -30 99 0
+summon ecologies:muskox -28 99 2 {Age:-24000}
+summon minecraft:polar_bear -40 99 0
+summon minecraft:polar_bear -42 99 2 {Age:-24000}
+summon minecraft:goat 25 99 0
+summon minecraft:wolf 30 99 0 {NoAI:1b}
+#wait 3
+damage @e[type=minecraft:goat,limit=1] 1 minecraft:mob_attack by @e[type=minecraft:wolf,limit=1]
+#wait 25
+execute if entity @e[type=ecologies:muskox,nbt={Age:-24000},limit=1] run say calf alive
+execute unless entity @e[type=ecologies:muskox,nbt={Age:-24000},limit=1] run say calf caught
+execute as @e[type=minecraft:wolf] run data get entity @s Health

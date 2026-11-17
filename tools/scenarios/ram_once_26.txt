@@ -1,0 +1,20 @@
+gamerule advance_time false
+time set noon
+gamerule spawn_mobs false
+forceload add -30 -30 30 30
+fill -20 98 -20 20 104 20 minecraft:glass hollow
+fill -19 98 -19 19 98 19 minecraft:grass_block
+fill -19 99 -19 19 103 19 minecraft:air
+summon ecologies:muskox 0 99 0
+summon minecraft:goat 0 99 10
+summon minecraft:wolf 4 99 10 {NoAI:1b}
+summon minecraft:wolf 4 99 0 {NoAI:1b}
+#wait 3
+damage @e[type=ecologies:muskox,limit=1] 1 minecraft:mob_attack by @e[type=minecraft:wolf,limit=1,sort=nearest]
+execute as @e[type=minecraft:goat] at @s run damage @s 1 minecraft:mob_attack by @e[type=minecraft:wolf,limit=1,sort=nearest]
+#wait 15
+say first attack done
+damage @e[type=ecologies:muskox,limit=1] 1 minecraft:mob_attack by @e[type=minecraft:wolf,limit=1,sort=nearest]
+execute as @e[type=minecraft:goat] at @s run damage @s 1 minecraft:mob_attack by @e[type=minecraft:wolf,limit=1,sort=nearest]
+#wait 8
+say second attack done

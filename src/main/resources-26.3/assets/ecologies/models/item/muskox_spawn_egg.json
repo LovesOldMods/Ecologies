@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ecologies:item/muskox_spawn_egg"
+  }
+}

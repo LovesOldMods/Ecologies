@@ -1,0 +1,24 @@
+# Shared mod info, plus one table per Minecraft version.
+mod.id = "ecologies"
+mod.name = "Ecologies"
+mod.group = "com.ecologies"
+mod.version = "0.1.0"
+mod.authors = "LovesOldMods, Klei Wright"
+mod.license = "CC-BY-NC-SA-4.0"
+
+["1.21.1"]
+mod.mc_compat = "[1.21, 1.21.1]"
+mod.mc_releases = ["1.21", "1.21.1"]
+deps.neo_loader = "21.1.266"
+deps.parchment_mc = "1.21.1"
+deps.parchment = "2024.11.17"
+deps.terrablender = "1.21.1-4.1.0.8"
+
+["26.3"]
+mod.mc_compat = "[26.3, 26.4)"
+mod.mc_releases = ["26.3"]
+deps.neo_loader = "26.3.0.103"
+# 26.x ships with Mojang names, so no Parchment.
+deps.parchment_mc = ""
+deps.parchment = ""
+deps.terrablender = "26.3-26.3.0.0.9"

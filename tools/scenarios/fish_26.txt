@@ -1,0 +1,19 @@
+gamerule advance_time false
+time set 13000
+gamerule spawn_mobs false
+forceload add -40 -40 40 40
+fill -20 97 -10 20 104 10 minecraft:glass hollow
+fill -19 98 -9 19 98 9 minecraft:grass_block
+fill -19 99 -9 19 103 9 minecraft:air
+fill -12 96 -3 -2 98 3 minecraft:water
+summon minecraft:fox -9 99 -6
+summon minecraft:cod -7 97 0
+fill 0 98 -9 0 103 9 minecraft:glass
+fill 2 96 -3 12 98 3 minecraft:water
+summon minecraft:polar_bear 7 99 -7
+summon minecraft:salmon 7 97 0
+#wait 45
+execute unless entity @e[type=minecraft:cod,x=-20,y=90,z=-10,dx=20,dy=15,dz=20] run say fox caught the cod
+execute if entity @e[type=minecraft:cod,x=-20,y=90,z=-10,dx=20,dy=15,dz=20] run say cod still alive
+execute unless entity @e[type=minecraft:salmon,x=0,y=90,z=-10,dx=20,dy=15,dz=20] run say polar bear caught the salmon
+execute if entity @e[type=minecraft:salmon,x=0,y=90,z=-10,dx=20,dy=15,dz=20] run say salmon still alive

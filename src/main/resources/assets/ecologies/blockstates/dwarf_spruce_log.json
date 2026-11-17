@@ -1,0 +1,287 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "axis": "y"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_core"
+      }
+    },
+    {
+      "when": {
+        "axis": "z"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_core",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "axis": "x"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_core",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "axis": "y",
+        "plus": "end"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_end"
+      }
+    },
+    {
+      "when": {
+        "axis": "y",
+        "plus": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined"
+      }
+    },
+    {
+      "when": {
+        "axis": "y",
+        "minus": "end"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_end",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "axis": "y",
+        "minus": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "axis": "y",
+        "side_1": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "axis": "y",
+        "side_2": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "axis": "y",
+        "side_3": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 90,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "axis": "y",
+        "side_4": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 90,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "axis": "x",
+        "plus": "end"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_end",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "axis": "x",
+        "plus": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "axis": "x",
+        "minus": "end"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_end",
+        "x": 90,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "axis": "x",
+        "minus": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 90,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "axis": "x",
+        "side_1": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined"
+      }
+    },
+    {
+      "when": {
+        "axis": "x",
+        "side_2": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "axis": "x",
+        "side_3": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "axis": "x",
+        "side_4": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 90,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "axis": "z",
+        "plus": "end"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_end",
+        "x": 90,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "axis": "z",
+        "plus": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 90,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "axis": "z",
+        "minus": "end"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_end",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "axis": "z",
+        "minus": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "axis": "z",
+        "side_1": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined"
+      }
+    },
+    {
+      "when": {
+        "axis": "z",
+        "side_2": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "axis": "z",
+        "side_3": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "axis": "z",
+        "side_4": "joined"
+      },
+      "apply": {
+        "model": "ecologies:block/dwarf_spruce_log_arm_joined",
+        "x": 90,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "leafy": "true"
+      },
+      "apply": {
+        "model": "ecologies:block/skinny_log_leaves"
+      }
+    }
+  ]
+}

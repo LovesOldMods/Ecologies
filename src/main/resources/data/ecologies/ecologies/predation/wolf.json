@@ -1,0 +1,14 @@
+{
+  "predator": "minecraft:wolf",
+  "prey": [
+    "minecraft:sheep",
+    "minecraft:rabbit",
+    "minecraft:fox"
+  ],
+  "hunger_cooldown": 24000,
+  "prefers_babies": true,
+  "eats_kill": true,
+  "prey_flee_range": 10,
+  "sprint": 1.35,
+  "pack_size": 3
+}

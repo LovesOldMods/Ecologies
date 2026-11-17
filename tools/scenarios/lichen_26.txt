@@ -1,0 +1,15 @@
+gamerule advance_time false
+time set noon
+forceload add -16 -16 16 16
+fill 0 199 0 4 200 4 minecraft:stone
+setblock 2 201 2 ecologies:sprouted_glow_lichen[down=true]
+ecologies randomtick 2 201 2 200
+execute if block 2 200 2 minecraft:gravel run say PASS lichen broke stone down to gravel
+execute if block 2 200 2 minecraft:cobblestone run say PARTIAL lichen broke stone to cobblestone only
+execute if block 2 200 2 minecraft:stone run say FAIL stone under lichen unchanged
+say spread check, filled count = glow lichen spread onto the stone:
+fill -2 199 -2 6 203 6 minecraft:air replace minecraft:glow_lichen
+setblock 2 201 2 ecologies:sprouted_glow_lichen[down=true,snipped=true]
+setblock 2 200 2 minecraft:stone
+say snipped lichen should not tick:
+ecologies randomtick 2 201 2 50

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": "ecologies:guano"
+  },
+  "result": {
+    "id": "ecologies:guano_block"
+  }
+}

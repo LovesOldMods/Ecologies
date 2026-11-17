@@ -1,0 +1,24 @@
+gamerule advance_time false
+time set noon
+forceload add -48 -48 48 48
+fill -40 199 -40 40 199 40 minecraft:stone
+fill -40 200 -40 40 215 40 minecraft:air
+fill -3 206 -3 3 206 3 minecraft:stone
+setblock 0 205 0 ecologies:bat_roost
+fill 5 200 -6 12 200 6 minecraft:farmland
+fill 5 201 -6 12 201 6 minecraft:wheat[age=2]
+summon ecologies:colony_bat 0 203 0
+summon ecologies:colony_bat 1 203 0
+#wait 30
+say day check (BatFlags 1b = hanging at the roost):
+execute as @e[type=ecologies:colony_bat,x=0,y=203,z=0,distance=..24] run data get entity @s BatFlags
+time set midnight
+#wait 45
+say night check (Fed 1b = fed on the crops, KnownCrops = remembered farm):
+execute as @e[type=ecologies:colony_bat,x=0,y=203,z=0,distance=..24] run data get entity @s Fed
+execute as @e[type=ecologies:colony_bat,x=0,y=203,z=0,distance=..24] run data get entity @s KnownCrops
+time set noon
+#wait 45
+say morning check (BatFlags 1b again; filled count = guano layers dropped under the roost):
+execute as @e[type=ecologies:colony_bat,x=0,y=203,z=0,distance=..24] run data get entity @s BatFlags
+fill -4 200 -4 4 204 4 minecraft:air replace ecologies:guano_layer

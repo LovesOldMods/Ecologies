@@ -1,0 +1,65 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "ecologies:block/mushroom_farm"
+      }
+    },
+    {
+      "when": {
+        "fill": "1"
+      },
+      "apply": {
+        "model": "ecologies:block/mushroom_farm_soil1"
+      }
+    },
+    {
+      "when": {
+        "fill": "2"
+      },
+      "apply": {
+        "model": "ecologies:block/mushroom_farm_soil2"
+      }
+    },
+    {
+      "when": {
+        "fill": "3"
+      },
+      "apply": {
+        "model": "ecologies:block/mushroom_farm_soil3_spotted"
+      }
+    },
+    {
+      "when": {
+        "fill": "4"
+      },
+      "apply": {
+        "model": "ecologies:block/mushroom_farm_soil4_spotted"
+      }
+    },
+    {
+      "when": {
+        "fill": "5"
+      },
+      "apply": {
+        "model": "ecologies:block/mushroom_farm_soil5_spotted"
+      }
+    },
+    {
+      "when": {
+        "fill": "6"
+      },
+      "apply": {
+        "model": "ecologies:block/mushroom_farm_soil6_spotted"
+      }
+    },
+    {
+      "when": {
+        "fill": "7"
+      },
+      "apply": {
+        "model": "ecologies:block/mushroom_farm_soil7_spotted"
+      }
+    }
+  ]
+}

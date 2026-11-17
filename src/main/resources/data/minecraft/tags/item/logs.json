@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "ecologies:dwarf_spruce_log",
+    "ecologies:stripped_dwarf_spruce_log",
+    "ecologies:dwarf_spruce_log_post_crown",
+    "ecologies:stripped_dwarf_spruce_log_post_crown"
+  ]
+}

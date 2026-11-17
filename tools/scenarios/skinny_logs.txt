@@ -1,0 +1,16 @@
+forceload add -8 -8 8 8
+fill -3 99 -3 3 110 3 minecraft:air
+setblock 0 100 0 ecologies:dwarf_spruce_log[axis=y]
+setblock 0 101 0 ecologies:dwarf_spruce_log_post_crown[axis=y]
+setblock 1 101 0 minecraft:spruce_leaves[persistent=true]
+setblock 0 102 0 ecologies:dwarf_spruce_log_post_crown[axis=x]
+setblock 1 102 0 ecologies:dwarf_spruce_log_post_crown[axis=x]
+setblock 0 104 0 ecologies:dwarf_spruce_log_post_crown[axis=y]
+setblock 1 104 0 minecraft:spruce_leaves[persistent=true]
+setblock -1 104 0 minecraft:spruce_leaves[persistent=true]
+setblock 0 104 1 minecraft:spruce_leaves[persistent=true]
+#wait 2
+execute if block 0 100 0 ecologies:dwarf_spruce_log[plus=joined,minus=end] run say PASS trunk joins the crown above, ring below
+execute if block 0 101 0 ecologies:dwarf_spruce_log_post_crown[minus=joined,leafy=false] run say PASS crown joined below, one leaf beside it is not leafy
+execute if block 1 102 0 ecologies:dwarf_spruce_log_post_crown[minus=joined,plus=end] run say PASS sideways crown joins west, ring east
+execute if block 0 104 0 ecologies:dwarf_spruce_log_post_crown[leafy=true] run say PASS crown with three leaves round it is leafy

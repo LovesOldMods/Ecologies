@@ -1,0 +1,24 @@
+forceload add -3072 -3264
+forceload add 0 0
+time set noon
+#wait 8
+setblock -3072 200 -3264 minecraft:grass_block
+setblock -3072 201 -3264 minecraft:spruce_sapling
+setblock 0 200 0 minecraft:grass_block
+setblock 0 201 0 minecraft:spruce_sapling
+#wait 2
+ecologies randomtick -3072 201 -3264 400
+ecologies randomtick 0 201 0 400
+execute if block -3072 201 -3264 minecraft:spruce_sapling run say STILL_SAPLING
+execute if block -3072 201 -3264 ecologies:dwarf_spruce_log run say DWARF_SPRUCE_GREW
+execute if block -3072 201 -3264 minecraft:spruce_log run say NORMAL_SPRUCE_GREW
+execute if block 0 201 0 minecraft:spruce_log run say SPAWN_NORMAL_SPRUCE_GREW
+execute if block -3072 200 -3264 minecraft:podzol run say PODZOL_UNDER
+setblock 4 200 0 minecraft:grass_block
+setblock 4 201 0 ecologies:dwarf_spruce_sapling
+#wait 2
+ecologies randomtick 4 201 0 400
+execute if block 4 201 0 ecologies:dwarf_spruce_log run say PASS_DWARF_SAPLING_GREW_OUTSIDE_TUNDRA
+execute if block 4 201 0 ecologies:dwarf_spruce_sapling run say FAIL_DWARF_SAPLING_STILL
+say leaf arms on the grown tree:
+execute if block 4 205 0 ecologies:dwarf_spruce_log_post_crown run data get block 4 205 0

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "ecologies:bolting_wheat",
+    "ecologies:bolting_carrots",
+    "ecologies:bolting_potatoes",
+    "ecologies:bolting_beetroots"
+  ]
+}

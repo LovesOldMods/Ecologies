@@ -1,0 +1,85 @@
+gamerule advance_time false
+time set 13000
+gamerule spawn_mobs false
+forceload add -260 -60 260 60
+fill -254 98 -24 -206 104 24 minecraft:glass hollow
+fill -253 98 -23 -207 98 23 minecraft:grass_block
+fill -253 99 -23 -207 103 23 minecraft:air
+summon minecraft:wolf -240 99 -10
+summon minecraft:sheep -224 99 6
+fill -202 98 -24 -154 104 24 minecraft:glass hollow
+fill -201 98 -23 -155 98 23 minecraft:grass_block
+fill -201 99 -23 -155 103 23 minecraft:air
+summon minecraft:wolf -188 99 -10
+summon minecraft:sheep -172 99 6
+fill -150 98 -24 -102 104 24 minecraft:glass hollow
+fill -149 98 -23 -103 98 23 minecraft:grass_block
+fill -149 99 -23 -103 103 23 minecraft:air
+summon minecraft:wolf -136 99 -10
+summon minecraft:sheep -120 99 6
+fill -98 98 -24 -50 104 24 minecraft:glass hollow
+fill -97 98 -23 -51 98 23 minecraft:grass_block
+fill -97 99 -23 -51 103 23 minecraft:air
+summon minecraft:wolf -84 99 -10
+summon minecraft:wolf -82 99 -9
+summon minecraft:wolf -80 99 -8
+summon minecraft:sheep -68 99 6
+fill -46 98 -24 2 104 24 minecraft:glass hollow
+fill -45 98 -23 1 98 23 minecraft:grass_block
+fill -45 99 -23 1 103 23 minecraft:air
+summon minecraft:wolf -32 99 -10
+summon minecraft:wolf -30 99 -9
+summon minecraft:wolf -28 99 -8
+summon minecraft:sheep -16 99 6
+fill 6 98 -24 54 104 24 minecraft:glass hollow
+fill 7 98 -23 53 98 23 minecraft:grass_block
+fill 7 99 -23 53 103 23 minecraft:air
+summon minecraft:wolf 20 99 -10
+summon minecraft:wolf 22 99 -9
+summon minecraft:wolf 24 99 -8
+summon minecraft:sheep 36 99 6
+fill 58 98 -24 106 104 24 minecraft:glass hollow
+fill 59 98 -23 105 98 23 minecraft:grass_block
+fill 59 99 -23 105 103 23 minecraft:air
+summon minecraft:fox 72 99 -10
+summon minecraft:chicken 88 99 6
+fill 110 98 -24 158 104 24 minecraft:glass hollow
+fill 111 98 -23 157 98 23 minecraft:grass_block
+fill 111 99 -23 157 103 23 minecraft:air
+summon minecraft:fox 124 99 -10
+summon minecraft:chicken 140 99 6
+fill 162 98 -24 210 104 24 minecraft:glass hollow
+fill 163 98 -23 209 98 23 minecraft:grass_block
+fill 163 99 -23 209 103 23 minecraft:air
+summon minecraft:fox 176 99 -10
+summon minecraft:chicken 192 99 6
+fill 218 98 -12 242 104 12 minecraft:glass hollow
+fill 219 98 -11 241 98 11 minecraft:snow_block
+fill 219 99 -11 241 103 11 minecraft:air
+fill 219 96 -2 241 98 2 minecraft:water
+summon minecraft:polar_bear 230 99 -7
+summon minecraft:salmon 233 97 0
+summon minecraft:salmon 227 97 0
+#wait 45
+execute unless entity @e[type=minecraft:sheep,x=-254,y=95,z=-24,dx=48,dy=10,dz=48] run say solo wolf trial 0 CAUGHT
+execute if entity @e[type=minecraft:sheep,x=-254,y=95,z=-24,dx=48,dy=10,dz=48] run say solo wolf trial 0 ESCAPED
+execute unless entity @e[type=minecraft:sheep,x=-202,y=95,z=-24,dx=48,dy=10,dz=48] run say solo wolf trial 1 CAUGHT
+execute if entity @e[type=minecraft:sheep,x=-202,y=95,z=-24,dx=48,dy=10,dz=48] run say solo wolf trial 1 ESCAPED
+execute unless entity @e[type=minecraft:sheep,x=-150,y=95,z=-24,dx=48,dy=10,dz=48] run say solo wolf trial 2 CAUGHT
+execute if entity @e[type=minecraft:sheep,x=-150,y=95,z=-24,dx=48,dy=10,dz=48] run say solo wolf trial 2 ESCAPED
+execute unless entity @e[type=minecraft:sheep,x=-98,y=95,z=-24,dx=48,dy=10,dz=48] run say pack trial 0 CAUGHT
+execute if entity @e[type=minecraft:sheep,x=-98,y=95,z=-24,dx=48,dy=10,dz=48] run say pack trial 0 ESCAPED
+execute unless entity @e[type=minecraft:sheep,x=-46,y=95,z=-24,dx=48,dy=10,dz=48] run say pack trial 1 CAUGHT
+execute if entity @e[type=minecraft:sheep,x=-46,y=95,z=-24,dx=48,dy=10,dz=48] run say pack trial 1 ESCAPED
+execute unless entity @e[type=minecraft:sheep,x=6,y=95,z=-24,dx=48,dy=10,dz=48] run say pack trial 2 CAUGHT
+execute if entity @e[type=minecraft:sheep,x=6,y=95,z=-24,dx=48,dy=10,dz=48] run say pack trial 2 ESCAPED
+execute unless entity @e[type=minecraft:chicken,x=58,y=95,z=-24,dx=48,dy=10,dz=48] run say fox trial 0 CAUGHT
+execute if entity @e[type=minecraft:chicken,x=58,y=95,z=-24,dx=48,dy=10,dz=48] run say fox trial 0 ESCAPED
+execute unless entity @e[type=minecraft:chicken,x=110,y=95,z=-24,dx=48,dy=10,dz=48] run say fox trial 1 CAUGHT
+execute if entity @e[type=minecraft:chicken,x=110,y=95,z=-24,dx=48,dy=10,dz=48] run say fox trial 1 ESCAPED
+execute unless entity @e[type=minecraft:chicken,x=162,y=95,z=-24,dx=48,dy=10,dz=48] run say fox trial 2 CAUGHT
+execute if entity @e[type=minecraft:chicken,x=162,y=95,z=-24,dx=48,dy=10,dz=48] run say fox trial 2 ESCAPED
+execute store result score #s photo if entity @e[type=minecraft:salmon,x=218,y=90,z=-12,dx=24,dy=15,dz=24]
+scoreboard objectives add photo dummy
+execute unless entity @e[type=minecraft:salmon,x=218,y=90,z=-12,dx=24,dy=15,dz=24,limit=2] run say polar bear caught both salmon
+execute as @e[type=minecraft:salmon,x=218,y=90,z=-12,dx=24,dy=15,dz=24] run say salmon still alive

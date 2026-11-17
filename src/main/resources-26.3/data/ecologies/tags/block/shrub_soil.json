@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:substrate_overworld",
+    "#ecologies:moss",
+    "minecraft:farmland",
+    "minecraft:gravel",
+    "minecraft:deepslate",
+    "minecraft:cobbled_deepslate",
+    "minecraft:tuff",
+    "minecraft:smooth_basalt"
+  ]
+}

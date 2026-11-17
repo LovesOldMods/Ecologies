@@ -1,0 +1,5 @@
+forceload add -8 -8 8 8
+summon minecraft:bat 0 120 0 {CustomName:'"Bert"',PersistenceRequired:1b}
+#wait 3
+execute if entity @e[type=minecraft:bat] run say FAIL vanilla bat still here
+execute if entity @e[type=ecologies:colony_bat,x=0,y=120,z=0,distance=..4] run say PASS vanilla bat became a colony bat

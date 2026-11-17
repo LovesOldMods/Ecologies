@@ -1,0 +1,299 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "0"
+              }
+            }
+          ]
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:wheat",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2.0,
+              "add": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "0"
+              }
+            }
+          ]
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:wheat_seeds",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2.0,
+                "max": 4.0
+              },
+              "add": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "1"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "2"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "3"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "4"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "5"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "6"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "7"
+              }
+            }
+          ]
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:wheat",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 1.0,
+              "add": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "1"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "2"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "3"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "4"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "5"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "6"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "7"
+              }
+            }
+          ]
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ecologies:rusted_wheat",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 2.0
+              },
+              "add": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "1"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "2"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "3"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "4"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "5"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "6"
+              }
+            },
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "ecologies:bolting_wheat",
+              "properties": {
+                "age": "7"
+              }
+            }
+          ]
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:wheat_seeds",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              },
+              "add": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "random_sequence": "ecologies:blocks/bolting_wheat"
+}

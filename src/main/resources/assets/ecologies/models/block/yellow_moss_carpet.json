@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/carpet",
+  "textures": {
+    "wool": "ecologies:block/yellow_moss_block"
+  }
+}

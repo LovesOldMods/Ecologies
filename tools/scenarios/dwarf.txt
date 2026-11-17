@@ -1,0 +1,9 @@
+forceload add -3072 -3264
+forceload add 0 0
+#wait 6
+setblock -3072 200 -3264 minecraft:grass_block
+setblock 0 200 0 minecraft:grass_block
+place feature ecologies:dwarf_spruce -3072 201 -3264
+place feature ecologies:dwarf_spruce 0 201 0
+execute if block -3072 201 -3264 ecologies:dwarf_spruce_log run say T_GREW
+execute if block 0 201 0 ecologies:dwarf_spruce_log run say S_GREW

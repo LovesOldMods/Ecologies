@@ -1,0 +1,7 @@
+{
+  "animal": "minecraft:goat",
+  "damage": 2.0,
+  "knockback": 2.5,
+  "protects_young": true,
+  "range": 10
+}

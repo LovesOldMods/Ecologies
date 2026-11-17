@@ -1,0 +1,14 @@
+{
+  "predator": "minecraft:polar_bear",
+  "prey": [
+    "ecologies:muskox",
+    "minecraft:salmon",
+    "minecraft:cod"
+  ],
+  "hunger_cooldown": 48000,
+  "prefers_babies": true,
+  "eats_kill": true,
+  "adds_hunting": true,
+  "prey_flee_range": 16,
+  "chase_speed": 1.4
+}

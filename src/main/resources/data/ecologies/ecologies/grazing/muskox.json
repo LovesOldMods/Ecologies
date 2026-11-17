@@ -1,0 +1,17 @@
+{
+  "animal": "ecologies:muskox",
+  "food": "minecraft:glow_lichen",
+  "eat_cooldown": 2400,
+  "search_range": 10,
+  "drop": "minecraft:string",
+  "drop_counts": [
+    1,
+    1,
+    2,
+    4,
+    8
+  ],
+  "habitat": "ecologies:muskox_habitat",
+  "overcrowded_at": 10,
+  "first_drop_delay": 24000
+}

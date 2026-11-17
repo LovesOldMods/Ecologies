@@ -1,0 +1,19 @@
+{
+  "feature": "ecologies:bat_colony",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 96
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

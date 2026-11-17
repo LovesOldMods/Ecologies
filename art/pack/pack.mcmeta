@@ -1,0 +1,19 @@
+{
+  "pack": {
+	"min_format": [97.1],
+	"max_format": [97.1],
+    "description": [
+      {
+        "text": "Tundra Assets",
+        "color": "#d3782e"
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "This isn't a real pack!",
+        "color": "#908b8b"
+      }
+    ]
+  }
+}

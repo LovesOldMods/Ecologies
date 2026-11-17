@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "condition": "minecraft:tool/can_silk_touch",
+          "name": "ecologies:white_ice"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "ecologies:blocks/white_ice"
+}

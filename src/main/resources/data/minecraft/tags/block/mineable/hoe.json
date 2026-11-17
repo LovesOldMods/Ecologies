@@ -1,0 +1,13 @@
+{
+  "values": [
+    "ecologies:red_moss_block",
+    "ecologies:orange_moss_block",
+    "ecologies:yellow_moss_block",
+    "ecologies:red_moss_carpet",
+    "ecologies:orange_moss_carpet",
+    "ecologies:yellow_moss_carpet",
+    "ecologies:stunted_red_shrub",
+    "ecologies:orange_shrub",
+    "ecologies:yellow_shrub"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "mob": "ecologies:colony_bat",
+  "roost": "ecologies:bat_roost",
+  "lure": "minecraft:spider_eye",
+  "forage": "#ecologies:bat_forage_crops",
+  "overharvest_limit": 32,
+  "recovery_ticks_per_layer": 3000,
+  "abandon_ticks": 72000
+}

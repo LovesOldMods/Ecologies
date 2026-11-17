@@ -1,0 +1,12 @@
+{
+  "predator": "minecraft:ocelot",
+  "prey": [
+    "minecraft:chicken"
+  ],
+  "hunger_cooldown": 12000,
+  "prefers_babies": true,
+  "eats_kill": true,
+  "prey_flee_range": 8,
+  "stalks": true,
+  "sprint": 1.3
+}

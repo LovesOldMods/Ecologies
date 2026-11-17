@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "ecologies:block/bat_roost_top",
+    "side": "ecologies:block/bat_roost_side",
+    "bottom": "minecraft:block/dripstone_block"
+  }
+}

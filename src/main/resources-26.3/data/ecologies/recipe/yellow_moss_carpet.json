@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": "ecologies:yellow_moss_block"
+  },
+  "result": {
+    "id": "ecologies:yellow_moss_carpet",
+    "count": 3
+  }
+}

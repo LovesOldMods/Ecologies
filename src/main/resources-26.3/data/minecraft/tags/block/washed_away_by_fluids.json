@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "ecologies:stunted_red_shrub",
+    "ecologies:orange_shrub",
+    "ecologies:yellow_shrub",
+    "ecologies:red_moss_carpet",
+    "ecologies:orange_moss_carpet",
+    "ecologies:yellow_moss_carpet",
+    "ecologies:sprouted_glow_lichen",
+    "ecologies:guano_layer",
+    "ecologies:bolting_wheat",
+    "ecologies:bolting_carrots",
+    "ecologies:bolting_potatoes",
+    "ecologies:bolting_beetroots"
+  ]
+}

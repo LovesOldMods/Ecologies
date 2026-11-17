@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ecologies:block/sprouted_glow_lichen"
+  }
+}

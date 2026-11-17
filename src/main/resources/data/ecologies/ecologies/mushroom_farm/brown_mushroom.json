@@ -1,0 +1,7 @@
+{
+  "input": "minecraft:brown_mushroom",
+  "result": "minecraft:brown_mushroom",
+  "growth_time": 12000,
+  "min_yield": 2,
+  "max_yield": 4
+}

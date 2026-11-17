@@ -1,0 +1,7 @@
+{
+  "animal": "ecologies:muskox",
+  "damage": 4.0,
+  "knockback": 1.8,
+  "protects_young": true,
+  "range": 12
+}

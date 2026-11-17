@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#ecologies:has_bat_colonies",
+  "features": [
+    "ecologies:cave_mouth_dripstone",
+    "ecologies:bat_colony"
+  ],
+  "step": "underground_decoration"
+}

@@ -1,0 +1,26 @@
+gamerule advance_time false
+time set noon
+forceload add -16 -16 16 16
+fill -6 199 -6 6 199 6 minecraft:stone
+fill -6 200 -6 6 205 6 minecraft:air
+fill -4 200 -4 4 200 4 minecraft:farmland[moisture=7]
+setblock 0 199 0 minecraft:water
+setblock 0 200 0 minecraft:stone
+fill -4 201 -4 4 201 4 minecraft:wheat[age=7]
+fill -4 200 -4 4 200 4 minecraft:farmland[moisture=7] replace minecraft:stone
+setblock 2 201 2 minecraft:carrots[age=7]
+ecologies randomtick 2 201 2 200
+ecologies randomtick 1 201 1 200
+execute if block 1 201 1 ecologies:bolting_wheat run say PASS ripe wheat started bolting
+execute if block 2 201 2 ecologies:bolting_carrots run say PASS ripe carrots started bolting
+execute if block 1 201 1 ecologies:bolting_wheat[age=1] run say PASS wheat went on to bolt (flowering)
+ecologies randomtick 1 201 1 400
+say spread check: bolted wheat seeds bare farmland nearby (count of fresh wheat sprouts):
+setblock -3 201 -3 minecraft:air
+setblock -3 201 -2 minecraft:air
+setblock -2 201 -3 minecraft:air
+ecologies randomtick 1 201 1 400
+fill -4 201 -4 4 201 4 minecraft:air replace minecraft:wheat[age=0]
+say drops from breaking bolted wheat:
+setblock 1 201 1 air destroy
+execute as @e[type=minecraft:item,distance=..10,x=1,y=201,z=1] run data get entity @s Item

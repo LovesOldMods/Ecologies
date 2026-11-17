@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "ecologies:stripped_dwarf_spruce_log_post_crown",
+    "ecologies:stripped_dwarf_spruce_log_post_crown"
+  ],
+  "result": {
+    "id": "minecraft:stripped_spruce_wood"
+  }
+}

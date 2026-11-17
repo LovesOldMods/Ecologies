@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "minecraft:block/beetroots_stage3"
+    },
+    "age=1": {
+      "model": "ecologies:block/bolting_beetroots"
+    },
+    "age=2": {
+      "model": "ecologies:block/bolting_beetroots"
+    },
+    "age=3": {
+      "model": "ecologies:block/bolting_beetroots"
+    },
+    "age=4": {
+      "model": "ecologies:block/bolting_beetroots"
+    },
+    "age=5": {
+      "model": "ecologies:block/bolting_beetroots"
+    },
+    "age=6": {
+      "model": "ecologies:block/bolting_beetroots"
+    },
+    "age=7": {
+      "model": "ecologies:block/bolting_beetroots"
+    }
+  }
+}

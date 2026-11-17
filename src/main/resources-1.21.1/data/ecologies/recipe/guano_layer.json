@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "ecologies:guano_block"
+    }
+  },
+  "result": {
+    "id": "ecologies:guano_layer",
+    "count": 6
+  }
+}

@@ -1,0 +1,99 @@
+# display of every block and mob for screenshots (see showcase.sh)
+forceload add -32 -32 32 32
+#wait 5
+gamerule doDaylightCycle false
+gamerule doMobSpawning false
+gamerule doWeatherCycle false
+gamerule randomTickSpeed 0
+time set 6000
+fill -10 99 -2 10 99 16 minecraft:smooth_stone
+fill -10 100 -2 10 115 16 minecraft:air
+fill -10 116 -2 10 130 16 minecraft:air
+gamerule spawnRadius 0
+setworldspawn 0 100 -1 0
+# row 1: full blocks
+setblock -7 100 8 ecologies:guano_block
+setblock -6 100 8 ecologies:aged_guano_block
+setblock -5 100 8 ecologies:bat_roost
+setblock -4 100 8 ecologies:mushroom_farm[stage=2,fill=7]{species:"ecologies:red_mushroom",planted:"minecraft:red_mushroom",progress:0,display:{Name:"minecraft:red_mushroom"}}
+setblock -3 100 8 ecologies:smooth_basalt_iron_ore
+setblock -2 100 8 ecologies:red_moss_block
+setblock -1 100 8 ecologies:orange_moss_block
+setblock 0 100 8 ecologies:yellow_moss_block
+setblock 1 100 8 minecraft:moss_block
+setblock 2 100 8 ecologies:white_ice
+setblock 3 100 8 ecologies:white_packed_ice
+setblock 4 100 8 ecologies:guano_layer[layers=3]
+setblock 5 100 8 minecraft:farmland
+setblock 5 101 8 ecologies:bolting_wheat[age=3]
+setblock 6 100 8 minecraft:farmland
+setblock 6 101 8 ecologies:bolting_carrots[age=3]
+setblock 7 100 8 minecraft:farmland
+setblock 7 101 8 ecologies:bolting_beetroots[age=3]
+# row 2: plants on their ground, walls, posts
+setblock -2 101 8 ecologies:red_moss_carpet
+setblock -1 101 8 ecologies:orange_shrub
+setblock 0 101 8 ecologies:yellow_shrub
+setblock 1 101 8 ecologies:stunted_red_shrub
+setblock -7 100 5 ecologies:dwarf_spruce_log[axis=y]
+setblock -7 101 5 ecologies:dwarf_spruce_log_post_crown[axis=y]
+setblock -7 102 5 ecologies:dwarf_spruce_log_post_crown[axis=y]
+setblock -6 102 5 ecologies:dwarf_spruce_log_post_crown[axis=x]
+setblock -5 100 5 ecologies:dwarf_spruce_log[axis=x]
+setblock -4 100 5 ecologies:dwarf_spruce_log[axis=x]
+setblock -3 100 5 ecologies:stripped_dwarf_spruce_log[axis=y]
+setblock -2 100 5 ecologies:stripped_dwarf_spruce_log_post_crown[axis=y]
+setblock -2 101 5 minecraft:stone
+setblock -2 101 5 minecraft:air
+setblock -3 101 5 minecraft:stone
+setblock -3 101 5 minecraft:air
+setblock -6 103 5 minecraft:stone
+setblock -6 103 5 minecraft:air
+setblock 5 99 2 minecraft:grass_block
+place feature ecologies:dwarf_spruce 5 100 2
+setblock 0 100 5 minecraft:stone
+setblock 0 101 5 ecologies:sprouted_glow_lichen[down=true]
+setblock 1 100 5 minecraft:stone
+setblock 1 101 5 minecraft:glow_lichen[down=true]
+setblock 2 100 5 minecraft:stone
+setblock 2 100 4 ecologies:sprouted_glow_lichen[south=true]
+summon ecologies:muskox 4 100 12 {NoAI:1b,Rotation:[160f,0f]}
+summon ecologies:muskox 7 100 12 {NoAI:1b,Variant:1,Rotation:[200f,0f]}
+summon ecologies:muskox 6 100 10 {NoAI:1b,Age:-24000,Rotation:[180f,0f]}
+summon ecologies:colony_bat -4 100.2 12 {NoAI:1b}
+setblock -4 102 12 minecraft:stone
+setblock -4 101 12 ecologies:bat_roost
+# mushroom farms filling up, then full with three different species on top
+setblock -9 100 11 ecologies:mushroom_farm
+setblock -8 100 11 ecologies:mushroom_farm[stage=1,fill=1]
+setblock -7 100 11 ecologies:mushroom_farm[stage=1,fill=3]
+setblock -6 100 11 ecologies:mushroom_farm[stage=1,fill=6]
+setblock -5 100 11 ecologies:mushroom_farm[stage=2,fill=7]{species:"ecologies:brown_mushroom",planted:"minecraft:brown_mushroom",progress:0,display:{Name:"minecraft:brown_mushroom"}}
+setblock -4 100 11 ecologies:mushroom_farm[stage=2,fill=7]{species:"ecologies:crimson_fungus",planted:"minecraft:crimson_fungus",progress:0,display:{Name:"minecraft:crimson_fungus"}}
+setblock -3 100 11 ecologies:mushroom_farm[stage=2,fill=7]{species:"ecologies:glow_lichen",planted:"minecraft:glow_lichen",progress:0,display:{Name:"minecraft:glow_lichen",Properties:{down:"true"}}}
+# skinny logs in leaves
+setblock 8 100 6 ecologies:dwarf_spruce_log[axis=y]
+setblock 8 101 6 ecologies:dwarf_spruce_log_post_crown[axis=y]
+setblock 8 102 6 ecologies:dwarf_spruce_log_post_crown[axis=y]
+setblock 8 103 6 ecologies:dwarf_spruce_log_post_crown[axis=y]
+setblock 9 101 6 minecraft:spruce_leaves[persistent=true]
+setblock 7 102 6 minecraft:spruce_leaves[persistent=true]
+setblock 8 102 5 minecraft:spruce_leaves[persistent=true]
+setblock 8 104 6 minecraft:spruce_leaves[persistent=true]
+setblock 8 103 6 minecraft:stone
+setblock 8 103 6 ecologies:dwarf_spruce_log_post_crown[axis=y]
+setblock 8 101 6 minecraft:stone
+setblock 8 101 6 ecologies:dwarf_spruce_log_post_crown[axis=y]
+setblock 8 102 6 minecraft:stone
+setblock 8 102 6 ecologies:dwarf_spruce_log_post_crown[axis=y]
+# saplings: vanilla spruce beside the dwarf spruce sapling
+setblock 9 99 3 minecraft:grass_block
+setblock 9 100 3 ecologies:dwarf_spruce_sapling
+setblock 8 99 3 minecraft:grass_block
+setblock 8 100 3 minecraft:spruce_sapling
+# poisonous crops beside the poisonous potato
+summon item_display 1 101.5 14 {item:{id:"minecraft:poisonous_potato",count:1},item_display:"gui",billboard:"center"}
+summon item_display 2 101.5 14 {item:{id:"ecologies:poisonous_carrot",count:1},item_display:"gui",billboard:"center"}
+summon item_display 3 101.5 14 {item:{id:"ecologies:moldy_beetroot",count:1},item_display:"gui",billboard:"center"}
+summon item_display 4 101.5 14 {item:{id:"ecologies:rusted_wheat",count:1},item_display:"gui",billboard:"center"}
+#wait 3

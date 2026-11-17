@@ -1,0 +1,2 @@
+locate biome ecologies:tundra
+locate biome ecologies:lichen_woodland

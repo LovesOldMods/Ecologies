@@ -1,0 +1,8 @@
+gamerule doDaylightCycle false
+time set 5000
+ecologies survey -3072 -3264 100
+ecologies survey -3328 2624 70
+ecologies find ecologies:sprouted_glow_lichen -3072 -3264 60
+ecologies find ecologies:smooth_basalt_iron_ore -3072 -3264 60
+ecologies find ecologies:sprouted_glow_lichen -3328 2624 60
+ecologies find ecologies:dwarf_spruce_log -3328 2624 60
